@@ -56,6 +56,7 @@ public class HotelServlet extends HttpServlet {
         double hotelRating = Double.parseDouble(request.getParameter("hotelRating"));
         String hotelAmenities = request.getParameter("hotelAmenities");
         int roomPrice = Integer.parseInt(request.getParameter("roomPrice"));
+        System.out.println(hotelName);
 
         // Create a new Hotel object
         Hotel newHotel = new Hotel();
@@ -124,7 +125,7 @@ public class HotelServlet extends HttpServlet {
         request.setAttribute("hotel", hotel);
 
         // Forward the request to the JSP page to display the edit form
-        request.getRequestDispatcher("hotel-edit.jsp").forward(request, response);
+        request.getRequestDispatcher("hotel-form.jsp").forward(request, response);
     }
 
     private void deleteHotel(HttpServletRequest request, HttpServletResponse response)
