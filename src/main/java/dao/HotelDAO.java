@@ -1,0 +1,126 @@
+package dao;
+
+import pojo.Hotel;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class HotelDAO {
+
+    private final Connection connection;
+
+    public HotelDAO(Connection connection) {
+        this.connection = connection;
+    }
+
+    // Create operation
+    public boolean addHotel(Hotel hotel) {
+        String query = "INSERT INTO hotels (hotelName, hotelAddress, hotelRating, hotelAmenities, roomPrice) " +
+                "VALUES (?, ?, ?, ?, ?)";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(2, hotel.getHotelName());
+            statement.setString(3, hotel.getHotelAddress());
+            statement.setDouble(4, hotel.getHotelRating());
+            statement.setString(5, hotel.getHotelAmenities());
+            statement.setInt(6, hotel.getRoomPrice());
+
+            int rowsInserted = statement.executeUpdate();
+            return rowsInserted > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    // Read operation
+    public List<Hotel> getAllHotels() {
+        List<Hotel> hotels = new ArrayList<>();
+        String query = "SELECT * FROM hotels";
+
+        try (PreparedStatement statement = connection.prepareStatement(query);
+             ResultSet resultSet = statement.executeQuery()) {
+
+            while (resultSet.next()) {
+                Hotel hotel = new Hotel();
+                hotel.setHotelName(resultSet.getString("hotelName"));
+                hotel.setHotelAddress(resultSet.getString("hotelAddress"));
+                hotel.setHotelRating(resultSet.getDouble("hotelRating"));
+                hotel.setHotelAmenities(resultSet.getString("hotelAmenities"));
+                hotel.setRoomPrice(resultSet.getInt("roomPrice"));
+
+                hotels.add(hotel);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return hotels;
+    }
+
+    public Hotel getSingleHotel(int hotelId) {
+        String query = "SELECT * FROM hotels WHERE hotelId=?";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, hotelId);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    Hotel hotel = new Hotel();
+                    hotel.setHotelName(resultSet.getString("hotelName"));
+                    hotel.setHotelAddress(resultSet.getString("hotelAddress"));
+                    hotel.setHotelRating(resultSet.getDouble("hotelRating"));
+                    hotel.setHotelAmenities(resultSet.getString("hotelAmenities"));
+                    hotel.setRoomPrice(resultSet.getInt("roomPrice"));
+
+                    return hotel;
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null; // Return null if the hotel with the given ID is not found
+    }
+
+    // Update operation
+    public boolean updateHotel(Hotel hotel) {
+        String query = "UPDATE hotels SET hotelName=?, hotelAddress=?, hotelRating=?, hotelAmenities=?, roomPrice=? " +
+                "WHERE hotelId=?";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(2, hotel.getHotelName());
+            statement.setString(3, hotel.getHotelAddress());
+            statement.setDouble(4, hotel.getHotelRating());
+            statement.setString(5, hotel.getHotelAmenities());
+            statement.setInt(6, hotel.getRoomPrice());
+
+            int rowsUpdated = statement.executeUpdate();
+            return rowsUpdated > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    // Delete operation
+    public boolean deleteHotel(int hotelId) {
+        String query = "DELETE FROM hotels WHERE hotelId=?";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, hotelId);
+
+            int rowsDeleted = statement.executeUpdate();
+            return rowsDeleted > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+}
