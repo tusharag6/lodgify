@@ -13,7 +13,7 @@
 <div class="form">
     <div class="form_content">
         <header>Sign Up</header>
-        <form action="test-servlet" method="Post" onsubmit="validate(event)">
+        <form action="save-controller" method="Post" onsubmit="validate(event)">
             <div class="field input_field">
                 <input type="text" placeholder="Name" name="name" id="name">
             </div>
@@ -21,7 +21,7 @@
                 <input  type="text" placeholder="Email" name="email" id="email">
             </div>
             <div class="field input_field">
-                <input type="password" name="password" id="password" placeholder="Password">
+                <input type="password" name="password" id="password" placeholder="password">
             </div>
             <div class="field button">
                 <button type="submit">Sign Up</button>
