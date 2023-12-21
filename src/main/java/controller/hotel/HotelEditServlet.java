@@ -21,11 +21,10 @@ public class HotelEditServlet extends HttpServlet {
         int id=Integer.parseInt(hid);
 
         Hotel hotel= HotelDAO.getSingleHotel(id);
-        System.out.println(hotel.getHotelName());
 
         out.print("<form action='HotelEditServlet2' method='post'>");
         out.print("<table>");
-        out.print("<tr><td></td><td><input type='hidden' name='id' value='"+hotel.getHotelId()+"'/></td></tr>");
+        out.print("<tr><td></td><td><input type='hidden' name='id' value='"+id+"'/></td></tr>");
         out.print("<tr><td>Name:</td><td><input type='text' name='hotelName' id='hotelName' value='"+hotel.getHotelName()+"'/></td></tr>");
         out.print("<tr><td>Address:</td><td><input type='text' name='hotelAddress' id='hotelAddress' value='"+hotel.getHotelAddress()+"'/></td></tr>");
         out.print("<tr><td>Ratings:</td><td><input type='text' name='hotelRatings' id='hotelRatings' value='"+hotel.getHotelRating()+"'/></td></tr>");

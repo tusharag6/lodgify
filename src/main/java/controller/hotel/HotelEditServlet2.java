@@ -19,11 +19,20 @@ public class HotelEditServlet2 extends HttpServlet {
 
         String hid=request.getParameter("id");
         int id=Integer.parseInt(hid);
-        String name=request.getParameter("name");
+        String name=request.getParameter("hotelName");
+        String address=request.getParameter("hotelAddress");
+        String ratings=request.getParameter("hotelRatings");
+        String amenities=request.getParameter("hotelAmenities");
+        String roomPrice=request.getParameter("roomPrice");
+
 
         Hotel hotel=new Hotel();
         hotel.setHotelId(id);
         hotel.setHotelName(name);
+        hotel.setHotelAddress(address);
+        hotel.setHotelRating(Double.parseDouble(ratings));
+        hotel.setHotelAmenities(amenities);
+        hotel.setRoomPrice(Integer.parseInt(roomPrice));
 
         boolean status= HotelDAO.updateHotel(hotel);
         if(status){
