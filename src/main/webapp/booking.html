@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Registration</title>
+</head>
+<body>
+<h2>Booking Registration Form</h2>
+<form action="BookingCreationServlet" method="post">
+    <label for="hotelId">Hotel ID:</label>
+    <input type="text" id="hotelId" name="hotelId" required><br>
+
+    <label for="checkInDate">Check-In Date:</label>
+    <input type="text" id="checkInDate" name="checkInDate" placeholder="YYYY-MM-DD" required><br>
+
+    <label for="checkOutDate">Check-Out Date:</label>
+    <input type="text" id="checkOutDate" name="checkOutDate" placeholder="YYYY-MM-DD" required><br>
+
+    <label for="numberOfGuests">Number of Guests:</label>
+    <input type="text" id="numberOfGuests" name="numberOfGuests" required><br>
+
+    <label for="totalPrice">Total Price:</label>
+    <input type="text" id="totalPrice" name="totalPrice" required><br>
+
+    <label for="isConfirmed">Confirmed:</label>
+    <select id="isConfirmed" name="isConfirmed" required>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select><br>
+
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
