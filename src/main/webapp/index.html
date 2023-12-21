@@ -8,12 +8,19 @@
 <body>
 <h1>Welcome to Hotel Registration</h1>
 <button onclick="redirectToRegistration()">Go to Registration</button>
+<button onclick="redirectToBookingCreation()">Go to Booking Creation</button>
+
 <a href="HotelViewServlet">view hotel</a>
+<a href="BookingViewServlet">view booking</a>
+
 </body>
 
 <script>
     function redirectToRegistration() {
         window.location.href = 'registration.html';
+    }
+    function redirectToBookingCreation() {
+        window.location.href = 'booking.html';
     }
 </script>
 <!--</body>-->
