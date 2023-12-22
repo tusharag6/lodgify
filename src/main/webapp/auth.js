@@ -1,29 +1,57 @@
-function validate(event){
+let form = document.getElementById("auth");
+function shower(element, message) {
+    const parent = element.parentElement;
+    const error = parent.querySelector(".err_msg");
+    error.innerText = message;
+    parent.classList.add("error");
+    parent.classList.remove("success");
+}
+function showsuccess(element) {
+    const parent = element.parentElement;
+    const error = parent.querySelector(".err_msg");
+    error.innerText = "";
+    parent.classList.remove("error");
+    parent.classList.add("success");
+}
+form.addEventListener('submit',(event)=>{
     event.preventDefault();
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    let name=document.getElementById("name").value.trim()
-    let email=document.getElementById("email").value.trim()
-    let password=document.getElementById("password").value.trim()
-    if(name === ""){
-        console.log("Name cannot be empty")
-        return ;
+    let name=document.getElementById("name")
+    let email=document.getElementById("email")
+    let password=document.getElementById("Password")
+    let status = false
+    if(name.value === ""){
+        shower(name,"Name cannot be empty")
+        status = true
     }
-    if(name.length < 3){
-        console.log("Name should be more than 3 characters")
-        return ;
+    else if(name.value.length < 3){
+        shower(name,"Name must be more than 3 character")
+        status = true
     }
-    if(!emailRegex.test(email)){
-        console.log("Enter valid email")
-        return ;
+    else {
+        showsuccess(name)
     }
-    if (password === ""){
-        console.log("Password cannot be empty");
-        return ;
+    if(!emailRegex.test(email.value)){
+        shower(email,"Invalid Email")
+        status = true
     }
-    if(password.length < 8){
-        console.log("Password must be 8 characters long")
-        return ;
+    else {
+        showsuccess(email)
     }
-    console.log("validated")
-    document.querySelector("form").submit();
-}
+    if (password.value === ""){
+        shower(password,"Password cannot be empty")
+        status = true
+    }
+    else if(password.value.length < 8){
+        shower(password,"Password must be more than 8 character")
+        status = true
+    }
+    else {
+        showsuccess(password)
+    }
+    if(!status){
+        showsuccess(password)
+        console.log("validated");
+        form.submit()
+    }
+})

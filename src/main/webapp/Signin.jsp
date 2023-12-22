@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Management System</title>
-    <link rel="stylesheet" href="./assets/auth_style.css">
+    <link rel="stylesheet" href="assets/auth.css">
 </head>
 <body>
 <div class="form">
