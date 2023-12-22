@@ -66,7 +66,7 @@
         <div class="recent-booking">
             <div class="recent-booking-main-header">
                 <span style="font-weight: bold;font-size: 1.6rem">Recent Bookings</span>
-                <a href="${pageContext.request.contextPath}/admin/hotels.jsp" >View All</a>
+                <a href="${pageContext.request.contextPath}/admin/bookings.jsp" >View All</a>
             </div>
         <div class="recent-bookings-container">
             <div class="booking-item">
@@ -159,12 +159,28 @@
             </div>
         </div>
         </div>
-        <h1>Recent New Hotel Registrations</h1>
-        <div class="recent-hotels-container">
-            <div class="hotel-item">
-                <p><strong>Hotel ID:</strong> H567</p>
-                <p><strong>Hotel Name:</strong> Grand Hotel</p>
-                <p><strong>Location:</strong> City, Country</p>
+        <div class="recent-hotels-register">
+            <div class="recent-hotels-main-header">
+                <span style="font-weight: bold;font-size: 1.6rem">Newly Joined Hotel</span>
+                <a href="${pageContext.request.contextPath}/admin/hotels.jsp" >View All</a>
+            </div>
+            <div class="recent-hotels-container">
+                <div class="hotel-item">
+                    <img src="assets/images/hotel-placeholder.jpg" class="booking-image"/>
+                    <div>
+                        <div class="hotel-details">
+                            <div>
+                                <img src="assets/images/hotel2.png" class="booking-date-icon"/>
+                                <span>Grand Siba</span>
+                            </div>
+                            <div>
+                                <img src="assets/images/map.png" class="booking-date-icon"/>
+                                <span>Sambalpur</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

@@ -48,13 +48,14 @@
 .metric-card:hover {
     transform: scale(1.05);
 }
-
+.recent-hotels-register,
 .recent-booking{
     border: 1px solid #e0e0e0;
     padding: 20px;
     border-radius: 8px;
+    margin-bottom: 20px;
 }
-
+.recent-hotels-main-header,
 .recent-booking-main-header{
     display: flex;
     justify-content: space-between;
@@ -89,7 +90,7 @@
 }
 
 .booking-image{
-    width: 150px;
+    width: 146px;
     object-fit: cover;
     border-radius: 8px;
     margin-right: 20px;
@@ -129,4 +130,13 @@
 .booking-date-icon{
     max-width: 30px; /* Adjust the max-width based on your preference */
     margin-right: 8px;/* Add some spacing between the icon and text */
+}
+
+.hotel-details{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    font-size: 1.2rem;
+    padding-right: 20px;
 }
