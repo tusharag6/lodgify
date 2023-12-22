@@ -3,6 +3,7 @@ import connection.ConnectionProvider;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import pojo.User;
 public class UserDao {
@@ -18,6 +19,17 @@ public class UserDao {
         if( r > 0 ){
             System.out.println("Inserted");
         }
+    }
+    public boolean checkEmail(User user) throws SQLException {
+        final String query = "select * from user where userEmail = ?";
+        smt = connection.prepareStatement(query);
+        smt.setString(1,user.getUserEmail());
+        ResultSet r = smt.executeQuery();
+        if(r.next()) {
+            System.out.println(r.getInt(1));
+            return false;
+        }
+        return true;
     }
 }
 

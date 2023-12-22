@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Management System</title>
-    <link rel="stylesheet" href="assets/auth.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/auth/assets/auth.css">
     <style>
         .input_field.success input {
             border-color: #09c372;
@@ -44,7 +44,7 @@
                 <button type="submit">Sign Up</button>
             </div>
             <div class="link">
-                <span>Already have an account?<a href="Signin.jsp" class="sign in">Sign in</a></span>
+                <span>Already have an account?<a href="${pageContext.request.contextPath}/auth/index.jsp" class="sign in">Sign in</a></span>
             </div>
         </form>
     </div>
