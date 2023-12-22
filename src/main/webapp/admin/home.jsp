@@ -14,20 +14,53 @@
         <h1>Welcome Admin</h1>
         <div class="metrics-container">
             <div class="metric-card">
-                <h2>No. of Hotels</h2>
-                <p>150</p>
+                <div class="metric-content">
+                    <img src="assets/images/hotel.png" class="metric-icon"/>
+                    <div class="metric-text">
+                        <span class="metric-text-number">12</span>
+                        <span class="metric-text-title">Total Hotels</span>
+                    </div>
+                </div>
             </div>
+
             <div class="metric-card">
-                <h2>No. of Customers</h2>
-                <p>500</p>
+                <div class="metric-content">
+                    <img src="assets/images/customer.png" class="metric-icon"/>
+                    <div class="metric-text">
+                        <span class="metric-text-number">500</span>
+                        <span class="metric-text-title">Total Customers</span>
+                    </div>
+                </div>
             </div>
+
             <div class="metric-card">
-                <h2>No. of Bookings</h2>
-                <p>1000</p>
+                <div class="metric-content">
+                    <img src="assets/images/double-bed.png" class="metric-icon"/>
+                    <div class="metric-text">
+                        <span class="metric-text-number">1000</span>
+                        <span class="metric-text-title">Total Bookings</span>
+                    </div>
+                </div>
             </div>
+
             <div class="metric-card">
-                <h2>Total Revenue</h2>
-                <p>$250,000</p>
+                <div class="metric-content">
+                    <img src="assets/images/money.png" class="metric-icon"/>
+                    <div class="metric-text">
+                        <span class="metric-text-number">$250,000</span>
+                        <span class="metric-text-title">Total Revenue</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-content">
+                    <img src="assets/images/average.png" class="metric-icon"/>
+                    <div class="metric-text">
+                        <span class="metric-text-number">$150</span>
+                        <span class="metric-text-title">Average Daily Rate</span>
+                    </div>
+                </div>
             </div>
         </div>
         <h1>Recent New Bookings</h1>
@@ -47,7 +80,6 @@
                 <p><strong>Customer Name:</strong> John Doe</p>
                 <p><strong>Check-in Date:</strong> 2023-01-01</p>
             </div>
-
         </div>
         <h1>Recent New Hotel Registrations</h1>
         <div class="recent-hotels-container">

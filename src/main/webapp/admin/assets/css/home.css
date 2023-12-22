@@ -1,3 +1,6 @@
+.content{
+    background: #f8f8f8;
+}
 .metrics-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -5,8 +8,38 @@
     margin-bottom: 20px;
 }
 
+.metric-content {
+    display: flex;
+    align-items: center;
+}
+
+.metric-icon {
+    max-width: 50px; /* Adjust the max-width based on your preference */
+    margin-right: 20px; /* Add some spacing between the icon and text */
+}
+
+.metric-text {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-text-number{
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem
+
+}
+
+.metric-text-title {
+    font-size: 1rem;
+    color: #999;
+}
+
 .metric-card {
-    border: 1px solid #ddd;
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+    background: white;
+    /*border: 1px solid #e0e0e0;*/
     padding: 20px;
     text-align: center;
     border-radius: 8px;
@@ -26,7 +59,7 @@
 
 .booking-item,
 .hotel-item {
-    border: 1px solid #ddd;
+    background: white;
     padding: 20px;
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
