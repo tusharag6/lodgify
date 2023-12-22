@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 .container {
@@ -14,7 +14,7 @@ body {
     color: white;
     padding-top: 20px;
     box-sizing: border-box;
-    transition: 0.5s;
+    transition: width 0.5s;
 }
 
 .sidebar ul {
@@ -23,29 +23,26 @@ body {
 }
 
 .sidebar li {
-    padding: 10px;
+    padding: 15px;
+    transition: background-color 0.3s;
 }
 
 .sidebar a {
     text-decoration: none;
     color: white;
+    display: block;
+    transition: color 0.3s;
+}
+
+.sidebar li:hover {
+    background-color: #555;
+}
+
+.sidebar a:hover {
+    color: #ffcc00;
 }
 
 .content {
     flex: 1;
     padding: 20px;
-}
-
-@media screen and (max-width: 768px) {
-    .sidebar {
-        width: 0;
-    }
-
-    .sidebar.active {
-        width: 250px;
-    }
-
-    .content {
-        flex: 0;
-    }
 }

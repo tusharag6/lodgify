@@ -9,14 +9,7 @@
 </head>
 <body>
 <div class="container">
-    <div class="sidebar">
-        <ul>
-            <li><a href="${pageContext.request.contextPath}/admin/home.jsp">Home</a></li>
-            <li><a href="${pageContext.request.contextPath}/admin/hotels.jsp">Hotels</a></li>
-            <li><a href="${pageContext.request.contextPath}/admin/bookings.jsp">Bookings</a></li>
-            <li><a href="${pageContext.request.contextPath}/admin/customers.jsp">Customers</a></li>
-        </ul>
-    </div>
+    <%@ include file="sidebar.jsp" %>
     <div class="content">
         <h1>Welcome Admin</h1>
         <div class="metrics-container">
@@ -44,6 +37,17 @@
                 <p><strong>Customer Name:</strong> John Doe</p>
                 <p><strong>Check-in Date:</strong> 2023-01-01</p>
             </div>
+            <div class="booking-item">
+                <p><strong>Booking ID:</strong> 1234</p>
+                <p><strong>Customer Name:</strong> John Doe</p>
+                <p><strong>Check-in Date:</strong> 2023-01-01</p>
+            </div>
+            <div class="booking-item">
+                <p><strong>Booking ID:</strong> 1234</p>
+                <p><strong>Customer Name:</strong> John Doe</p>
+                <p><strong>Check-in Date:</strong> 2023-01-01</p>
+            </div>
+
         </div>
         <h1>Recent New Hotel Registrations</h1>
         <div class="recent-hotels-container">
