@@ -63,23 +63,101 @@
                 </div>
             </div>
         </div>
-        <h1>Recent New Bookings</h1>
+        <div class="recent-booking">
+            <div class="recent-booking-main-header">
+                <span style="font-weight: bold;font-size: 1.6rem">Recent Bookings</span>
+                <a href="${pageContext.request.contextPath}/admin/hotels.jsp" >View All</a>
+            </div>
         <div class="recent-bookings-container">
             <div class="booking-item">
-                <p><strong>Booking ID:</strong> 1234</p>
-                <p><strong>Customer Name:</strong> John Doe</p>
-                <p><strong>Check-in Date:</strong> 2023-01-01</p>
+                <img src="assets/images/hotel-placeholder.jpg" class="booking-image"/>
+                <div>
+                    <div class="recent-bookings-header">
+                        <span class="booking-customer">John Doe</span>
+                        <div class="recent-bookings-subheader">
+                            <span class="booking-hotel">Vistas</span>
+                            <span class="booking-price" style="font-weight: bold">$2000</span>
+                        </div>
+                    </div>
+                    <div class="booking-date">
+                    <div>
+                        <img src="assets/images/check-in.png" class="booking-date-icon"/>
+                        <span>20th Jan 2023</span>
+                    </div>
+                    <div>
+                        <img src="assets/images/check-out.png" class="booking-date-icon"/>
+                        <span>25th Jan 2023</span>
+                    </div>
+                    </div>
+                </div>
             </div>
             <div class="booking-item">
-                <p><strong>Booking ID:</strong> 1234</p>
-                <p><strong>Customer Name:</strong> John Doe</p>
-                <p><strong>Check-in Date:</strong> 2023-01-01</p>
+                <img src="assets/images/hotel-placeholder.jpg" class="booking-image"/>
+                <div>
+                    <div class="recent-bookings-header">
+                        <span class="booking-customer">John Doe</span>
+                        <div class="recent-bookings-subheader">
+                            <span class="booking-hotel">Vistas</span>
+                            <span class="booking-price" style="font-weight: bold">$2000</span>
+                        </div>
+                    </div>
+                    <div class="booking-date">
+                        <div>
+                            <img src="assets/images/check-in.png" class="booking-date-icon"/>
+                            <span>20th Jan 2023</span>
+                        </div>
+                        <div>
+                            <img src="assets/images/check-out.png" class="booking-date-icon"/>
+                            <span>25th Jan 2023</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="booking-item">
-                <p><strong>Booking ID:</strong> 1234</p>
-                <p><strong>Customer Name:</strong> John Doe</p>
-                <p><strong>Check-in Date:</strong> 2023-01-01</p>
+                <img src="assets/images/hotel-placeholder.jpg" class="booking-image"/>
+                <div>
+                    <div class="recent-bookings-header">
+                        <span class="booking-customer">John Doe</span>
+                        <div class="recent-bookings-subheader">
+                            <span class="booking-hotel">Vistas</span>
+                            <span class="booking-price" style="font-weight: bold">$2000</span>
+                        </div>
+                    </div>
+                    <div class="booking-date">
+                        <div>
+                            <img src="assets/images/check-in.png" class="booking-date-icon"/>
+                            <span>20th Jan 2023</span>
+                        </div>
+                        <div>
+                            <img src="assets/images/check-out.png" class="booking-date-icon"/>
+                            <span>25th Jan 2023</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="booking-item">
+                <img src="assets/images/hotel-placeholder.jpg" class="booking-image"/>
+                <div>
+                    <div class="recent-bookings-header">
+                        <span class="booking-customer">John Doe</span>
+                        <div class="recent-bookings-subheader">
+                            <span class="booking-hotel">Vistas</span>
+                            <span class="booking-price" style="font-weight: bold">$2000</span>
+                        </div>
+                    </div>
+                    <div class="booking-date">
+                        <div>
+                            <img src="assets/images/check-in.png" class="booking-date-icon"/>
+                            <span>20th Jan 2023</span>
+                        </div>
+                        <div>
+                            <img src="assets/images/check-out.png" class="booking-date-icon"/>
+                            <span>25th Jan 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
         <h1>Recent New Hotel Registrations</h1>
         <div class="recent-hotels-container">
