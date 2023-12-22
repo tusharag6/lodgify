@@ -1,0 +1,26 @@
+.metrics-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.metric-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+}
+
+.recent-bookings-container,
+.recent-hotels-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.booking-item,
+.hotel-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 300px;
+}
