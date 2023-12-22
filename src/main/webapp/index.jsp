@@ -54,20 +54,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav ms-auto py-0">
-        <a href="index.html" class="nav-item nav-link active">Home</a>
+        <a href="index.jsp" class="nav-item nav-link">Home</a>
         <a href="about.html" class="nav-item nav-link">About</a>
-        <a href="service.html" class="nav-item nav-link">Services</a>
-        <a href="package.html" class="nav-item nav-link">Packages</a>
-        <div class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-          <div class="dropdown-menu m-0">
-            <a href="destination.html" class="dropdown-item">Destination</a>
-            <a href="booking.html" class="dropdown-item">Booking</a>
-            <a href="team.html" class="dropdown-item">Travel Guides</a>
-            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-            <a href="404.html" class="dropdown-item">404 Page</a>
-          </div>
-        </div>
+        <a href="booking.html" class="nav-item nav-link">Booking</a>
+        <a href="destination.html" class="nav-item nav-link">Destination</a>
+        <a href="admin.html" class="nav-item nav-link">Admin</a>
         <a href="contact.html" class="nav-item nav-link">Contact</a>
       </div>
       <a href="" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
@@ -103,7 +94,7 @@
       </div>
       <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
         <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
-        <h1 class="mb-4">Welcome to <span class="text-primary">Tourist</span></h1>
+        <h1 class="mb-4">Welcome to <span class="text-primary">Lodgify</span></h1>
         <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
         <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
         <div class="row gy-2 gx-4 mb-4">
