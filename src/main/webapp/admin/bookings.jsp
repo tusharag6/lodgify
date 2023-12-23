@@ -51,8 +51,12 @@
                     <td>500.00</td>
                     <td>true</td>
                     <td>
-                        <i class="fas fa-edit" title="Edit" style="margin-right: 10px"></i>
-                        <i class="fas fa-trash-alt" title="Delete"></i>
+                        <a href="${pageContext.request.contextPath}/admin/edit-booking.jsp">
+                            <i class="fas fa-edit" title="Edit" style="margin-right: 10px; color: white"></i>
+                        </a>
+                        <a>
+                            <i class="fas fa-trash-alt" title="Delete" style="color: white"></i>
+                        </a>
                     </td>
                 </tr>
                 <%-- Add more booking items as needed --%>
