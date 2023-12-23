@@ -1,4 +1,4 @@
-let form = document.getElementById("auth");
+let form = document.getElementById("register");
 function shower(element, message) {
     const parent = element.parentElement;
     const error = parent.querySelector(".err_msg");

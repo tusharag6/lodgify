@@ -25,11 +25,15 @@ public class UserDao {
         smt = connection.prepareStatement(query);
         smt.setString(1,user.getUserEmail());
         ResultSet r = smt.executeQuery();
-        if(r.next()) {
-            System.out.println(r.getInt(1));
-            return false;
-        }
-        return true;
+        return !r.next();
+    }
+    public boolean login(User user) throws SQLException {
+        final String query = "select * from user where userEmail = ? and userPassword = ?";
+        smt = connection.prepareStatement(query);
+        smt.setString(1,user.getUserEmail());
+        smt.setString(2,user.getUserPassword());
+        ResultSet r = smt.executeQuery();
+        return r.next();
     }
 }
 

@@ -12,8 +12,8 @@ import java.sql.SQLException;
 
 import pojo.User;
 import dao.UserDao;
-@WebServlet("/save-controller")
-public class SaveController extends HttpServlet {
+@WebServlet("/register")
+public class RegisterController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user = new User();

@@ -27,7 +27,7 @@
 <div class="form">
     <div class="form_content">
         <header>Sign Up</header>
-        <form action="save-controller" method="Post" id="auth">
+        <form action="${pageContext.request.contextPath}/register" method="Post" id="register">
             <div class="field input_field">
                 <label for="name"></label><input type="text" placeholder="Name" name="name" id="name">
                 <div class="err_msg"></div>
@@ -44,11 +44,11 @@
                 <button type="submit">Sign Up</button>
             </div>
             <div class="link">
-                <span>Already have an account?<a href="${pageContext.request.contextPath}/auth/index.jsp" class="sign in">Sign in</a></span>
+                <span>Already have an account?<a href="${pageContext.request.contextPath}/auth/Signin.jsp" class="sign in">Sign in</a></span>
             </div>
         </form>
     </div>
 </div>
-<script defer src="auth.js"></script>
+<script src="${pageContext.request.contextPath}/auth/register.js"></script>
 </body>
 </html>
