@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Management Admin Panel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         <%@ include file="assets/css/home.css"%>
         <%@ include file="assets/css/sidebar.css"%>
     </style>
+    <script src="https://kit.fontawesome.com/ac01cc78a8.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="container">

@@ -1,4 +1,4 @@
-.content{
+body{
     background: #14141f;
     color: white;
 }
@@ -55,6 +55,7 @@
     padding: 20px 0;
     margin-bottom: 20px;
 }
+
 .recent-hotels-main-header,
 .recent-booking-main-header{
     display: flex;
@@ -90,7 +91,7 @@
 }
 
 .booking-image{
-    width: 147px;
+    width: 143px;
     object-fit: cover;
     border-radius: 8px;
     margin-right: 20px;
