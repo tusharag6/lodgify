@@ -25,6 +25,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="assets/css/bootsrap.min.css" rel="stylesheet">
 
+
     <!-- Template Stylesheet -->
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
@@ -46,12 +47,8 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
                 <a href="index.jsp" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="booking.html" class="nav-item nav-link">Booking</a>
-                <a href="destination.html" class="nav-item nav-link">Destination</a>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
         </div>
     </nav>
 
@@ -59,13 +56,8 @@
         <div class="container py-5">
             <div class="row justify-content-center py-5">
                 <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Destination</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Destination</li>
-                        </ol>
-                    </nav>
+                    <h1 class="display-3 text-white animated slideInDown">Complete Your Booking </h1>
+
                 </div>
             </div>
         </div>
@@ -78,45 +70,66 @@
 <div class="container-xxl py-5 destination">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Destination</h6>
-            <h1 class="mb-5">Popular Destination</h1>
+            <h6 class="section-title bg-white text-center text-primary px-3">Happy Booking</h6>
         </div>
-        <div class="row g-3">
-            <div class="col-lg-7 col-md-6">
-                <div class="row g-3">
-                    <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid" src="https://images.herzindagi.info/image/2022/Jul/places-to-visit-in-thailand.jpg" alt="">
-                            <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">30% OFF</div>
-                            <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Thailand</div>
-                        </a>
-                    </div>
-                    <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid" src="https://static2.tripoto.com/media/filter/tst/img/210609/TripDocument/1474116741_destination_for_malaysian_24343.jpg" alt="">
-                            <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">25% OFF</div>
-                            <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Malaysia</div>
-                        </a>
-                    </div>
-                    <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
-                        <a class="position-relative d-block overflow-hidden" href="">
-                            <img class="img-fluid" src="https://pyt-blogs.imgix.net/2022/11/sydney-opera-house-g5f04208c5_1920.jpg?auto=format&fit=scale&h=684&ixlib=php-3.3.0&w=1024&wpsize=large" alt="">
-                            <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">35% OFF</div>
-                            <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Australia</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                <a class="position-relative d-block h-100 overflow-hidden" href="">
-                    <img class="img-fluid position-absolute w-100 h-100" src="https://resources.thomascook.in/images/holidays/staticPage/ThingsToDo/PuraUlunbali.jpg" alt="" style="object-fit: cover;">
-                    <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">20% OFF</div>
-                    <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Indonesia</div>
-                </a>
-            </div>
-        </div>
+
+
+
+
     </div>
 </div>
+        <!-- Hotel Information -->
+        <div class="row mt-5">
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/400" class="card-img-top" alt="Hotel Image">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card p-3">
+                    <h5 class="mb-4">Hotel Name</h5>
+                    <br>
+                    <h5 class="mb-4">Booking Information</h5>
+                    <form>
+                        <div class="mb-3">
+                            <label for="adults" class="form-label">Adults</label>
+                            <select class="form-select" id="adults">
+                                <option selected>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="children" class="form-label">Children</label>
+                            <select class="form-select" id="children">
+                                <option selected>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="checkIn" class="form-label">Check-in Date</label>
+                            <input type="date" class="form-control" id="checkIn">
+                        </div>
+                        <div class="mb-3">
+                            <label for="checkOut" class="form-label">Check-out Date</label>
+                            <input type="date" class="form-control" id="checkOut">
+                        </div>
+                        <p class="card-text">Price: $130 per night</p>
+                        <br>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- End Hotel Information -->
+    </div>
+</div>
+<!-- Destination Start -->
+
 <!-- Destination Start -->
 
 
@@ -226,7 +239,7 @@
 <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="assets/JS/main.js"></script>
 </body>
 

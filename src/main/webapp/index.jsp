@@ -33,15 +33,6 @@
 </head>
 
 <body>
-<!-- Spinner Start -->
-<%--<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">--%>
-<%--  <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">--%>
-<%--    <span class="sr-only">Loading...</span>--%>
-<%--  </div>--%>
-<%--</div>--%>
-<!-- Spinner End -->
-
-
 <!-- Navbar & Hero Start -->
 <div class="container-fluid position-relative p-0">
   <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
@@ -58,7 +49,6 @@
         <a href="about.html" class="nav-item nav-link">About</a>
         <a href="booking.html" class="nav-item nav-link">Booking</a>
         <a href="destination.html" class="nav-item nav-link">Destination</a>
-        <a href="admin.html" class="nav-item nav-link">Admin</a>
         <a href="contact.html" class="nav-item nav-link">Contact</a>
       </div>
       <a href="" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
@@ -73,7 +63,7 @@
           <p class="fs-4 text-white mb-4 animated slideInDown">Tempor erat elitr rebum at clita diam amet diam et eos erat ipsum lorem sit</p>
           <div class="position-relative w-75 mx-auto animated slideInDown">
             <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Eg: Thailand">
-            <button type="button" class="btn btn-primary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top: 7px;">Search</button>
+            <a href="page.html"><button type="button" class="btn btn-primary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top: 7px;">Search</button></a>
           </div>
         </div>
       </div>

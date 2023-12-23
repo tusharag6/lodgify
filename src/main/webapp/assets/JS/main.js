@@ -67,7 +67,26 @@
         return false;
     });
 
+    function sortHotels() {
+        var sortBy = document.getElementById('sort-by').value;
+        var hotelsContainer = document.getElementById('hotel-listings');
+        var hotels = Array.from(hotelsContainer.children);
 
+        hotels.sort(function (a, b) {
+            var priceA = parseFloat(a.querySelector('.card-text:nth-child(3)').textContent.replace('Price: $', '').trim());
+            var priceB = parseFloat(b.querySelector('.card-text:nth-child(3)').textContent.replace('Price: $', '').trim());
+
+            if (sortBy === 'low-to-high') {
+                return priceA - priceB;
+            } else {
+                return priceB - priceA;
+            }
+        });
+
+        hotels.forEach(function (hotel) {
+            hotelsContainer.appendChild(hotel);
+        });
+    }
     // Testimonials carousel
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,
