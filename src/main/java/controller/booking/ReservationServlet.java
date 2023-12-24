@@ -10,6 +10,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import pojo.Hotel;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
@@ -24,7 +26,6 @@ public class ReservationServlet extends HttpServlet {
         int hotelId = Integer.parseInt(request.getParameter("hotelId"));
         String checkInDateString = request.getParameter("checkInDate");
         String checkOutDateString = request.getParameter("checkOutDate");
-        System.out.println(checkInDateString);
         int numberOfGuests = Integer.parseInt(request.getParameter("numberOfGuests"));
         int numberOfRooms = Integer.parseInt(request.getParameter("numberOfRooms"));
         double roomPrice = Double.parseDouble(request.getParameter("totalPrice"));
@@ -41,7 +42,11 @@ public class ReservationServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        double totalPrice = roomPrice*numberOfGuests;
+        // Calculate the number of days
+        long numberOfDays = calculateNumberOfDays(checkInDate, checkOutDate);
+
+        // Calculate the total price
+        double totalPrice = roomPrice * numberOfRooms * numberOfDays;
 
         // Create a new Booking object
         Booking newBooking = new Booking();
@@ -56,10 +61,19 @@ public class ReservationServlet extends HttpServlet {
         // Add the booking to the database
         try {
             BookingDAO.addBooking(newBooking);
-            response.sendRedirect(request.getContextPath() + "/home/confirmation.jsp");
+            Hotel hotel = HotelDAO.getSingleHotel(hotelId);
 
+            request.setAttribute("booking", newBooking);
+            request.setAttribute("hotel",hotel);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/home/confirmation.jsp");
+            dispatcher.forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private long calculateNumberOfDays(Date checkInDate, Date checkOutDate) {
+        long diffInMillies = Math.abs(checkOutDate.getTime() - checkInDate.getTime());
+        return diffInMillies / (24 * 60 * 60 * 1000);
     }
 }

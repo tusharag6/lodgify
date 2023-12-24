@@ -49,7 +49,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="index.jsp" class="nav-item nav-link">Home</a>
+                <a href="${pageContext.request.contextPath}/home/index.jsp" class="nav-item nav-link">Home</a>
                 <a href="${pageContext.request.contextPath}/home/about.jsp" class="nav-item nav-link">About</a>
                 <a href="${pageContext.request.contextPath}/home/booking.jsp" class="nav-item nav-link">Booking</a>
                 <a href="${pageContext.request.contextPath}/home/destination.jsp" class="nav-item nav-link">Destination</a>
@@ -83,11 +83,10 @@
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp pt-4" data-wow-delay="0.3s">
                 <h6 class="section-title bg-white text-start text-primary pe-3">Booking Confirmation</h6>
-                <h1 class="mb-4">Thank You for Choosing <span class="text-primary"><br>Hotel Name</span></h1>
-                <h5 class="mb-4 text-primary">Reservation Token 5</h5>
+                <h1 class="mb-4">Thank You for Choosing <span class="text-primary"><br>${hotel.getHotelName()}</span></h1>
                 <p class="mb-4">We sincerely appreciate your decision to stay with us. <br> </p>
-                <p class="mb-4">Your reservation for <span class="text-primary">two rooms</span>, for <span class="text-primary">two guests</span>, has been confirmed. </p>
-                <p class="mb-4">The total cost for your stay amounts to <span class="text-primary">₹10,000</span>, covering the period from 24th January to 26th January.</p>
+                <p class="mb-4">Your reservation for <span class="text-primary">${booking.getNumberOfRooms()} rooms</span>, for <span class="text-primary">${booking.getNumberOfGuests()} guests</span>, has been confirmed. </p>
+                <p class="mb-4">The total cost for your stay amounts to <span class="text-primary">₹${booking.getTotalPrice()}</span>, covering the period from ${booking.getCheckInDate()} to ${booking.getCheckOutDate()}.</p>
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                 <div class="position-relative h-100">
