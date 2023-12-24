@@ -1,16 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ page import="pojo.Hotel" %>
-<%@ page import="dao.HotelDAO" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.Arrays" %>
-<%
-    String hotelId = request.getParameter("hotelId");
-    Hotel hotel = HotelDAO.getSingleHotel(Integer.parseInt(hotelId));
-    String[] amenitiesArray = hotel.getHotelAmenities().split(",");
-    List<String> amenitiesList = Arrays.asList(hotel.getHotelAmenities().split(","));
-%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -95,52 +84,50 @@
             </div>
             <div class="col-md-6 pt-5">
                 <div class="p-3 pt-0">
-                    <h1 class="mb-4 text-primary"><%= hotel.getHotelName() %></h1>
-                    <h5 class="mb-4 text-primary">₹<%= hotel.getRoomPrice() %></h5>
+                    <h1 class="mb-4 text-primary">${hotel.getHotelName()}</h1>
+                    <h5 class="mb-4 text-primary">₹${hotel.getRoomPrice()}</h5>
                     <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
                     <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
                     <div class="row gy-2 gx-4 mb-4">
-                        <% for (String amenity : amenitiesList) { %>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i><%= amenity %></p>
-                        </div>
-                        <% } %>
+                        <c:forEach var="amenity" items="${amenitiesList}">
+                            <div class="col-sm-6">
+                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>${amenity}</p>
+                            </div>
+                        </c:forEach>
                     </div>
                     <br>
-                    <form class="card p-4">
+                    <form action="${pageContext.request.contextPath}/ReservationServlet" method="post" class="card p-4">
                         <h5 class="mb-4">Booking a Room</h5>
                         <div class="row">
                             <div class="mb-3 col-md-6">
                             <label for="numberOfGuests" class="form-label">Number of Guests</label>
-                            <select class="form-select" id="numberOfGuests">
-                                <option selected>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                            </select>
-                        </div>
+                                <input class="form-control w-100 ps-4 pe-5" name="numberOfGuests" id="numberOfGuests" type="text" placeholder="">
+                            </div>
                         <div class="mb-3 col-md-6">
                             <label for="numberOfRooms" class="form-label">Number of Rooms</label>
-                            <select class="form-select" id="numberOfRooms">
-                                <option selected>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                            </select>
+                            <input class="form-control w-100 ps-4 pe-5" name="numberOfRooms" id="numberOfRooms" type="text" placeholder="">
                         </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                            <label for="checkIn" class="form-label">Check-in Date</label>
-                            <input type="date" class="form-control" id="checkIn">
+                            <label for="checkInDate" class="form-label">Check-in Date</label>
+                            <input type="date" class="form-control" id="checkInDate" name="checkInDate">
                         </div>
                         <div class="mb-3 col-md-6">
-                            <label for="checkOut" class="form-label">Check-out Date</label>
-                            <input type="date" class="form-control" id="checkOut">
+                            <label for="checkOutDate" class="form-label">Check-out Date</label>
+                            <input type="date" class="form-control" id="checkOutDate" name="checkOutDate">
                         </div>
+                        </div>
+                        <div>
+<%--                            <label for="hotelId">Hotel ID</label>--%>
+                            <input type="hidden" id="hotelId" name="hotelId" value="${hotel.getHotelId()}">
+<%--                            <label for="totalPrice">Total Price</label>--%>
+                            <input type="hidden" id="totalPrice" name="totalPrice" value="${hotel.getRoomPrice()}">
+<%--                            <label for="isConfirmed">Confirmed</label>--%>
+                            <input type="hidden" id="isConfirmed" name="isConfirmed" value="true">
                         </div>
                         <br>
-                        <button type="submit" class="btn btn-primary">Continue Booking</button>
+                        <button class="btn btn-primary" type="submit" value="Submit">Book</button>
                     </form>
                 </div>
             </div>

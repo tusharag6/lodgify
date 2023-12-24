@@ -1,6 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,9 +30,13 @@
 </head>
 
 <body>
-
-
-
+<!-- Spinner Start -->
+<!--<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">-->
+<!--    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">-->
+<!--        <span class="sr-only">Loading...</span>-->
+<!--    </div>-->
+<!--</div>-->
+<!-- Spinner End -->
 <!-- Navbar & Hero Start -->
 <div class="container-fluid position-relative p-0">
     <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
@@ -47,7 +49,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="${pageContext.request.contextPath}/home/index.jsp" class="nav-item nav-link">Home</a>
+                <a href="index.jsp" class="nav-item nav-link">Home</a>
+                <a href="${pageContext.request.contextPath}/home/about.jsp" class="nav-item nav-link">About</a>
+                <a href="${pageContext.request.contextPath}/home/booking.jsp" class="nav-item nav-link">Booking</a>
+                <a href="${pageContext.request.contextPath}/home/destination.jsp" class="nav-item nav-link">Destination</a>
                 <a href="${pageContext.request.contextPath}/home/contact.jsp" class="nav-item nav-link">Contact</a>
             </div>
             <a href="" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
@@ -58,7 +63,12 @@
         <div class="container py-5">
             <div class="row justify-content-center py-5">
                 <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Search Results</h1>
+                    <h1 class="display-3 text-white animated slideInDown">Confirmation Page</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        </ol>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -67,45 +77,27 @@
 <!-- Navbar & Hero End -->
 
 
-<!-- Destination Start -->
-<div class="container-xxl py-5 destination">
+<!-- About Start -->
+<div class="container-xxl py-5">
     <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Available Hotels</h6>
-            <h1 class="mb-5">Popular Results</h1>
-        </div>
-
-
-        <!-- Hotel Listings Start -->
-        <div class="container py-5">
-            <div class="row">
-
-                <!-- Iterate over the list of hotels and display them -->
-                <c:forEach var="hotel" items="${hotels}">
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="${hotel.hotelName} Image">
-                            <div class="card-body">
-                                <h5 class="card-title">${hotel.hotelName}</h5>
-                                <p class="card-text">${hotel.hotelAddress}</p>
-                                <p class="card-text">Rating: ${hotel.hotelRating}</p>
-                                <p class="card-text">Amenities: ${hotel.hotelAmenities}</p>
-                                <p class="card-text">Price: ₹${hotel.roomPrice} per night</p>
-                                <a href="${pageContext.request.contextPath}/HotelSingleViewServlet?hotelId=${hotel.hotelId}"><button class="btn btn-primary">Book Now</button></a>
-                            </div>
-                        </div>
-                    </div>
-                </c:forEach>
-
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeInUp pt-4" data-wow-delay="0.3s">
+                <h6 class="section-title bg-white text-start text-primary pe-3">Booking Confirmation</h6>
+                <h1 class="mb-4">Thank You for Choosing <span class="text-primary"><br>Hotel Name</span></h1>
+                <h5 class="mb-4 text-primary">Reservation Token 5</h5>
+                <p class="mb-4">We sincerely appreciate your decision to stay with us. <br> </p>
+                <p class="mb-4">Your reservation for <span class="text-primary">two rooms</span>, for <span class="text-primary">two guests</span>, has been confirmed. </p>
+                <p class="mb-4">The total cost for your stay amounts to <span class="text-primary">₹10,000</span>, covering the period from 24th January to 26th January.</p>
             </div>
-        </div>        <!-- Hotel Listings End -->
-
-
-
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                <div class="position-relative h-100">
+                    <img class="img-fluid position-absolute w-100 h-100" src="https://static.theceomagazine.net/wp-content/uploads/2018/08/20092335/jade-mountain.jpg" alt="" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<!-- Destination Start -->
-
+<!-- About End -->
 
 <!-- Footer Start -->
 <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -121,7 +113,7 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-3">Contact</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Bhubaneswar</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
                 <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
                 <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
                 <div class="d-flex pt-2">
@@ -190,7 +182,6 @@
         <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
             <div class="d-inline-flex align-items-center" style="height: 45px;">
                 <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Bhubaneswar</small>
-                <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Bhubaneswar</small>
                 <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+012 345 6789</small>
                 <small class="text-light"><i class="fa fa-envelope-open me-2"></i>info@example.com</small>
             </div>
@@ -213,7 +204,8 @@
 <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-<%--<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>--%>
+
+<!-- Template Javascript -->
 <script src="${pageContext.request.contextPath}/home/assets/JS/main.js"></script>
 </body>
 
