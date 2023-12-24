@@ -1,6 +1,7 @@
 <%@ page import="pojo.Hotel" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -41,31 +42,24 @@
                 </tr>
                 </thead>
                 <tbody>
-                <% List<Hotel> hotels = (List<Hotel>) request.getAttribute("hotels");
-                    if (hotels != null && !hotels.isEmpty()) {
-                        for (Hotel hotel : hotels) { %>
-                <tr class="hotel-item">
-                    <td><%= hotel.getHotelId() %></td>
-                    <td><%= hotel.getHotelName() %></td>
-                    <td><%= hotel.getHotelAddress() %></td>
-                    <td><%= hotel.getHotelRating() %></td>
-                    <td><%= hotel.getHotelAmenities() %></td>
-                    <td><%= hotel.getRoomPrice() %></td>
-                    <td>
-                        <a href="HotelEditServlet?id=<%= hotel.getHotelId() %>">
-                            <i class="fas fa-edit" title="Edit" style="margin-right: 10px"></i>
-                        </a>
-                        <a href="HotelDeleteServlet?id=<%= hotel.getHotelId() %>">
-                            <i class="fas fa-trash-alt" title="Delete"></i>
-                        </a>
-                    </td>
-                </tr>
-                <% }
-                } else { %>
-                <tr>
-                    <td colspan="7">No hotels available.</td>
-                </tr>
-                <% } %>
+                <c:forEach var="hotel" items="${hotels}">
+                    <tr class="hotel-item">
+                        <td>${hotel.hotelId}</td>
+                        <td>${hotel.hotelName}</td>
+                        <td>${hotel.hotelAddress}</td>
+                        <td>${hotel.hotelRating}</td>
+                        <td>${hotel.hotelAmenities}</td>
+                        <td>${hotel.roomPrice}</td>
+                        <td>
+                            <a href="HotelEditServlet?id=${hotel.hotelId}">
+                                <i class="fas fa-edit" title="Edit" style="margin-right: 10px"></i>
+                            </a>
+                            <a href="HotelDeleteServlet?id=${hotel.hotelId}">
+                                <i class="fas fa-trash-alt" title="Delete"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </c:forEach>
                 </tbody>
             </table>
         </div>

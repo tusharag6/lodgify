@@ -17,7 +17,7 @@
             <a href="${pageContext.request.contextPath}/admin/home.jsp">Home</a>
         </li>
         <li><i class="fa-solid fa-hotel"></i>
-            <a href="${pageContext.request.contextPath}/admin/hotels.jsp">Hotels</a>
+            <a href="${pageContext.request.contextPath}/HotelViewServlet">Hotels</a>
         </li>
         <li><i class="fa-solid fa-book"></i>
             <a href="${pageContext.request.contextPath}/admin/bookings.jsp">Bookings</a>
