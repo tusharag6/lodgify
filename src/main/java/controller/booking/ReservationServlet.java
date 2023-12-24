@@ -10,24 +10,25 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import pojo.Hotel;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@WebServlet("/BookingCreationServlet")
-public class BookingCreationServlet extends HttpServlet {
+@WebServlet("/ReservationServlet")
+public class ReservationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         // Retrieve data from the booking creation form
         int hotelId = Integer.parseInt(request.getParameter("hotelId"));
         String checkInDateString = request.getParameter("checkInDate");
         String checkOutDateString = request.getParameter("checkOutDate");
         int numberOfGuests = Integer.parseInt(request.getParameter("numberOfGuests"));
         int numberOfRooms = Integer.parseInt(request.getParameter("numberOfRooms"));
-        double totalPrice = Double.parseDouble(request.getParameter("totalPrice"));
+        double roomPrice = Double.parseDouble(request.getParameter("totalPrice"));
         boolean isConfirmed = Boolean.parseBoolean(request.getParameter("isConfirmed"));
 
         // Convert date strings to Date objects
@@ -40,6 +41,12 @@ public class BookingCreationServlet extends HttpServlet {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+        // Calculate the number of days
+        long numberOfDays = calculateNumberOfDays(checkInDate, checkOutDate);
+
+        // Calculate the total price
+        double totalPrice = roomPrice * numberOfRooms * numberOfDays;
 
         // Create a new Booking object
         Booking newBooking = new Booking();
@@ -54,10 +61,19 @@ public class BookingCreationServlet extends HttpServlet {
         // Add the booking to the database
         try {
             BookingDAO.addBooking(newBooking);
-            response.sendRedirect(request.getContextPath() + "/BookingViewServlet");
+            Hotel hotel = HotelDAO.getSingleHotel(hotelId);
 
+            request.setAttribute("booking", newBooking);
+            request.setAttribute("hotel",hotel);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/home/confirmation.jsp");
+            dispatcher.forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private long calculateNumberOfDays(Date checkInDate, Date checkOutDate) {
+        long diffInMillies = Math.abs(checkOutDate.getTime() - checkInDate.getTime());
+        return diffInMillies / (24 * 60 * 60 * 1000);
     }
 }

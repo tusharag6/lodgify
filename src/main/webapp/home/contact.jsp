@@ -50,7 +50,6 @@
       <div class="navbar-nav ms-auto py-0">
         <a href="index.jsp" class="nav-item nav-link">Home</a>
         <a href="${pageContext.request.contextPath}/home/about.jsp" class="nav-item nav-link">About</a>
-        <a href="${pageContext.request.contextPath}/home/booking.jsp" class="nav-item nav-link">Booking</a>
         <a href="${pageContext.request.contextPath}/home/destination.jsp" class="nav-item nav-link">Destination</a>
         <a href="${pageContext.request.contextPath}/home/contact.jsp" class="nav-item nav-link">Contact</a>
       </div>

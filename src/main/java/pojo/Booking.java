@@ -6,6 +6,7 @@ public class Booking {
     private Date checkInDate;
     private Date checkOutDate;
     private int numberOfGuests;
+    private int numberOfRooms;
     private double totalPrice;
     private boolean isConfirmed;
 
@@ -20,6 +21,7 @@ public class Booking {
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
         this.numberOfGuests = numberOfGuests;
+        this.numberOfRooms = numberOfRooms;
         this.isConfirmed = false; // Default value
     }
 
@@ -63,6 +65,14 @@ public class Booking {
 
     public void setNumberOfGuests(int numberOfGuests) {
         this.numberOfGuests = numberOfGuests;
+    }
+
+    public int getNumberOfRooms() {
+        return numberOfRooms;
+    }
+
+    public void setNumberOfRooms(int numberOfRooms) {
+        this.numberOfRooms = numberOfRooms;
     }
 
     public double getTotalPrice() {

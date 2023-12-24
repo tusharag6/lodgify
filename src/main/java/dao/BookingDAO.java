@@ -12,8 +12,8 @@ public class BookingDAO {
 
     // Create operation
     public static boolean addBooking(Booking booking) {
-        String query = "INSERT INTO bookings (hotelId, checkInDate, checkOutDate, numberOfGuests, totalPrice, isConfirmed) " +
-                "VALUES (?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO bookings (hotelId, checkInDate, checkOutDate, numberOfGuests, numberOfRooms, totalPrice, isConfirmed) " +
+                "VALUES (?, ?, ?, ?, ?, ?,?)";
 
         try {
             PreparedStatement statement = connection.prepareStatement(query);
@@ -21,8 +21,9 @@ public class BookingDAO {
             statement.setDate(2, new java.sql.Date(booking.getCheckInDate().getTime()));
             statement.setDate(3, new java.sql.Date(booking.getCheckOutDate().getTime()));
             statement.setInt(4, booking.getNumberOfGuests());
-            statement.setDouble(5, booking.getTotalPrice());
-            statement.setBoolean(6, booking.isConfirmed());
+            statement.setInt(5, booking.getNumberOfRooms());
+            statement.setDouble(6, booking.getTotalPrice());
+            statement.setBoolean(7, booking.isConfirmed());
 
             int rowsInserted = statement.executeUpdate();
             return rowsInserted > 0;
@@ -48,6 +49,7 @@ public class BookingDAO {
                 booking.setCheckInDate(resultSet.getDate("checkInDate"));
                 booking.setCheckOutDate(resultSet.getDate("checkOutDate"));
                 booking.setNumberOfGuests(resultSet.getInt("numberOfGuests"));
+                booking.setNumberOfRooms(resultSet.getInt("numberOfRooms"));
                 booking.setTotalPrice(resultSet.getDouble("totalPrice"));
                 booking.setConfirmed(resultSet.getBoolean("isConfirmed"));
 
@@ -74,6 +76,7 @@ public class BookingDAO {
                     booking.setCheckInDate(resultSet.getDate("checkInDate"));
                     booking.setCheckOutDate(resultSet.getDate("checkOutDate"));
                     booking.setNumberOfGuests(resultSet.getInt("numberOfGuests"));
+                    booking.setNumberOfRooms(resultSet.getInt("numberOfRooms"));
                     booking.setTotalPrice(resultSet.getDouble("totalPrice"));
                     booking.setConfirmed(resultSet.getBoolean("isConfirmed"));
 
@@ -90,7 +93,7 @@ public class BookingDAO {
 
     // Update operation
     public static boolean updateBooking(Booking booking) {
-        String query = "UPDATE bookings SET hotelId=?, checkInDate=?, checkOutDate=?, numberOfGuests=?, totalPrice=?, isConfirmed=? " +
+        String query = "UPDATE bookings SET hotelId=?, checkInDate=?, checkOutDate=?, numberOfGuests=?, numberOfRooms=?, totalPrice=?, isConfirmed=? " +
                 "WHERE bookingId=?";
 
         try (PreparedStatement statement = connection.prepareStatement(query)) {
@@ -98,9 +101,10 @@ public class BookingDAO {
             statement.setDate(2, new java.sql.Date(booking.getCheckInDate().getTime()));
             statement.setDate(3, new java.sql.Date(booking.getCheckOutDate().getTime()));
             statement.setInt(4, booking.getNumberOfGuests());
-            statement.setDouble(5, booking.getTotalPrice());
-            statement.setBoolean(6, booking.isConfirmed());
-            statement.setInt(7, booking.getBookingId());
+            statement.setInt(5, booking.getNumberOfRooms());
+            statement.setDouble(6, booking.getTotalPrice());
+            statement.setBoolean(7, booking.isConfirmed());
+            statement.setInt(8, booking.getBookingId());
 
             int rowsUpdated = statement.executeUpdate();
             return rowsUpdated > 0;

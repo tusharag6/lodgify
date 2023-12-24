@@ -75,6 +75,9 @@
         <label for="numberOfGuests">Number of Guests</label>
         <input type="number" id="numberOfGuests" name="numberOfGuests" value="${booking.numberOfGuests}" required>
 
+        <label for="numberOfRooms">Number of Rooms</label>
+        <input type="number" id="numberOfRooms" name="numberOfRooms" value="${booking.numberOfRooms}" required>
+
         <label for="totalPrice">Total Price</label>
         <input type="number" id="totalPrice" name="totalPrice" value="${booking.totalPrice}" required>
 

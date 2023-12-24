@@ -71,6 +71,9 @@
         <label for="numberOfGuests">Number of Guests</label>
         <input type="number" id="numberOfGuests" name="numberOfGuests" required>
 
+        <label for="numberOfRooms">Number of Rooms</label>
+        <input type="number" id="numberOfRooms" name="numberOfRooms" required>
+
         <label for="totalPrice">Total Price</label>
         <input type="number" id="totalPrice" name="totalPrice" required>
 

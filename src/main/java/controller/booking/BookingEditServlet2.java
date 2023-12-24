@@ -27,6 +27,7 @@ public class BookingEditServlet2 extends HttpServlet {
         String checkInDateString = request.getParameter("checkInDate");
         String checkOutDateString = request.getParameter("checkOutDate");
         int numberOfGuests = Integer.parseInt(request.getParameter("numberOfGuests"));
+        int numberOfRooms = Integer.parseInt(request.getParameter("numberOfRooms"));
         double totalPrice = Double.parseDouble(request.getParameter("totalPrice"));
         boolean isConfirmed = Boolean.parseBoolean(request.getParameter("isConfirmed"));
 
@@ -47,6 +48,7 @@ public class BookingEditServlet2 extends HttpServlet {
         booking.setCheckInDate(checkInDate);
         booking.setCheckOutDate(checkOutDate);
         booking.setNumberOfGuests(numberOfGuests);
+        booking.setNumberOfRooms(numberOfRooms);
         booking.setTotalPrice(totalPrice);
         booking.setConfirmed(isConfirmed);
 

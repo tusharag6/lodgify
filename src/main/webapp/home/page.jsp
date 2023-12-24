@@ -1,7 +1,7 @@
-<%@ page import="pojo.Hotel" %>
-<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %><!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -90,8 +90,8 @@
                                 <p class="card-text">${hotel.hotelAddress}</p>
                                 <p class="card-text">Rating: ${hotel.hotelRating}</p>
                                 <p class="card-text">Amenities: ${hotel.hotelAmenities}</p>
-                                <p class="card-text">Price: $${hotel.roomPrice} per night</p>
-                                <a href="${pageContext.request.contextPath}/home/book.jsp"><button class="btn btn-primary">Book Now</button></a>
+                                <p class="card-text">Price: ₹${hotel.roomPrice} per night</p>
+                                <a href="${pageContext.request.contextPath}/HotelSingleViewServlet?hotelId=${hotel.hotelId}"><button class="btn btn-primary">Book Now</button></a>
                             </div>
                         </div>
                     </div>

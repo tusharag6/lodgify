@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,55 +73,61 @@
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 class="section-title bg-white text-center text-primary px-3">Happy Booking</h6>
         </div>
-
-
-
-
     </div>
 </div>
         <!-- Hotel Information -->
-        <div class="row mt-5">
+        <div class="row mt-5 px-5">
             <div class="col-md-6 mb-4">
                 <div class="card">
                     <img src="https://via.placeholder.com/400" class="card-img-top" alt="Hotel Image">
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="card p-3">
-                    <h5 class="mb-4">Hotel Name</h5>
+            <div class="col-md-6 pt-5">
+                <div class="p-3 pt-0">
+                    <h1 class="mb-4 text-primary">${hotel.getHotelName()}</h1>
+                    <h5 class="mb-4 text-primary">₹${hotel.getRoomPrice()}</h5>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <c:forEach var="amenity" items="${amenitiesList}">
+                            <div class="col-sm-6">
+                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>${amenity}</p>
+                            </div>
+                        </c:forEach>
+                    </div>
                     <br>
-                    <h5 class="mb-4">Booking Information</h5>
-                    <form>
-                        <div class="mb-3">
-                            <label for="adults" class="form-label">Adults</label>
-                            <select class="form-select" id="adults">
-                                <option selected>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                            </select>
+                    <form action="${pageContext.request.contextPath}/ReservationServlet" method="post" class="card p-4">
+                        <h5 class="mb-4">Booking a Room</h5>
+                        <div class="row">
+                            <div class="mb-3 col-md-6">
+                            <label for="numberOfGuests" class="form-label">Number of Guests</label>
+                                <input class="form-control w-100 ps-4 pe-5" name="numberOfGuests" id="numberOfGuests" type="text" placeholder="">
+                            </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="numberOfRooms" class="form-label">Number of Rooms</label>
+                            <input class="form-control w-100 ps-4 pe-5" name="numberOfRooms" id="numberOfRooms" type="text" placeholder="">
                         </div>
-                        <div class="mb-3">
-                            <label for="children" class="form-label">Children</label>
-                            <select class="form-select" id="children">
-                                <option selected>0</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                            </select>
                         </div>
-                        <div class="mb-3">
-                            <label for="checkIn" class="form-label">Check-in Date</label>
-                            <input type="date" class="form-control" id="checkIn">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                            <label for="checkInDate" class="form-label">Check-in Date</label>
+                            <input type="date" class="form-control" id="checkInDate" name="checkInDate">
                         </div>
-                        <div class="mb-3">
-                            <label for="checkOut" class="form-label">Check-out Date</label>
-                            <input type="date" class="form-control" id="checkOut">
+                        <div class="mb-3 col-md-6">
+                            <label for="checkOutDate" class="form-label">Check-out Date</label>
+                            <input type="date" class="form-control" id="checkOutDate" name="checkOutDate">
                         </div>
-                        <p class="card-text">Price: $130 per night</p>
+                        </div>
+                        <div>
+<%--                            <label for="hotelId">Hotel ID</label>--%>
+                            <input type="hidden" id="hotelId" name="hotelId" value="${hotel.getHotelId()}">
+<%--                            <label for="totalPrice">Total Price</label>--%>
+                            <input type="hidden" id="totalPrice" name="totalPrice" value="${hotel.getRoomPrice()}">
+<%--                            <label for="isConfirmed">Confirmed</label>--%>
+                            <input type="hidden" id="isConfirmed" name="isConfirmed" value="true">
+                        </div>
                         <br>
-                        <br>
-                        <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                        <button class="btn btn-primary" type="submit" value="Submit">Book</button>
                     </form>
                 </div>
             </div>
