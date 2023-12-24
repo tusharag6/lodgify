@@ -71,55 +71,76 @@
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 class="section-title bg-white text-center text-primary px-3">Happy Booking</h6>
         </div>
-
-
-
-
     </div>
 </div>
         <!-- Hotel Information -->
-        <div class="row mt-5">
+        <div class="row mt-5 px-5">
             <div class="col-md-6 mb-4">
                 <div class="card">
                     <img src="https://via.placeholder.com/400" class="card-img-top" alt="Hotel Image">
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card p-3">
-                    <h5 class="mb-4">Hotel Name</h5>
+                <div class="p-3 pt-0">
+                    <h1 class="mb-4 text-primary">Hotel Name</h1>
+                    <h5 class="mb-4 text-primary">$3000</h5>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>First Class Flights</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Handpicked Hotels</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>5 Star Accommodations</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Latest Model Vehicles</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>150 Premium City Tours</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>24/7 Service</p>
+                        </div>
+                    </div>
                     <br>
-                    <h5 class="mb-4">Booking Information</h5>
-                    <form>
-                        <div class="mb-3">
-                            <label for="adults" class="form-label">Adults</label>
-                            <select class="form-select" id="adults">
+                    <form class="card p-4">
+                        <h5 class="mb-4">Booking a Room</h5>
+                        <div class="row">
+                            <div class="mb-3 col-md-6">
+                            <label for="numberOfGuests" class="form-label">Number of Guests</label>
+                            <select class="form-select" id="numberOfGuests">
                                 <option selected>1</option>
                                 <option>2</option>
                                 <option>3</option>
                                 <option>4</option>
                             </select>
                         </div>
-                        <div class="mb-3">
-                            <label for="children" class="form-label">Children</label>
-                            <select class="form-select" id="children">
-                                <option selected>0</option>
-                                <option>1</option>
+                        <div class="mb-3 col-md-6">
+                            <label for="numberOfRooms" class="form-label">Number of Rooms</label>
+                            <select class="form-select" id="numberOfRooms">
+                                <option selected>1</option>
                                 <option>2</option>
                                 <option>3</option>
+                                <option>4</option>
                             </select>
                         </div>
-                        <div class="mb-3">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
                             <label for="checkIn" class="form-label">Check-in Date</label>
                             <input type="date" class="form-control" id="checkIn">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 col-md-6">
                             <label for="checkOut" class="form-label">Check-out Date</label>
                             <input type="date" class="form-control" id="checkOut">
                         </div>
-                        <p class="card-text">Price: $130 per night</p>
+                        </div>
                         <br>
-                        <br>
-                        <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                        <button type="submit" class="btn btn-primary">Continue Booking</button>
                     </form>
                 </div>
             </div>
