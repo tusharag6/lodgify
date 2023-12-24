@@ -121,4 +121,30 @@ public class HotelDAO {
             return false;
         }
     }
+
+//    find hotels by location
+public static List<Hotel> findHotels(String searchTerm) {
+    List<Hotel> hotels = new ArrayList<>();
+    try {
+        String query = "SELECT * FROM hotels WHERE hotelName LIKE ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, "%" + searchTerm + "%");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                Hotel hotel = new Hotel();
+                hotel.setHotelId(resultSet.getInt("hotelId"));
+                hotel.setHotelName(resultSet.getString("hotelName"));
+                hotel.setHotelAddress(resultSet.getString("hotelAddress"));
+                hotel.setHotelRating(resultSet.getDouble("hotelRating"));
+                hotel.setHotelAmenities(resultSet.getString("hotelAmenities"));
+                hotel.setRoomPrice(resultSet.getInt("roomPrice"));
+                hotels.add(hotel);
+            }
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return hotels;
+}
+
 }

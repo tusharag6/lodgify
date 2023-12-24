@@ -1,5 +1,7 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
+<%@ page import="pojo.Hotel" %>
+<%@ page import="java.util.List" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -77,86 +79,26 @@
         <!-- Hotel Listings Start -->
         <div class="container py-5">
             <div class="row">
-                <!-- Hotel 1 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Hotel 1 Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Hotel 1</h5>
-                            <p class="card-text">Description of Hotel 1.</p>
-                            <p class="card-text">Price: $100 per night</p>
-                            <a href="book.jsp"><button class="btn btn-primary">Book Now</button></a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Hotel 2 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Hotel 2 Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Hotel 2</h5>
-                            <p class="card-text">Description of Hotel 2.</p>
-                            <p class="card-text">Price: $120 per night</p>
-                            <a href="book.jsp"><button class="btn btn-primary">Book Now</button></a>
+                <!-- Iterate over the list of hotels and display them -->
+                <c:forEach var="hotel" items="${hotels}">
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="${hotel.hotelName} Image">
+                            <div class="card-body">
+                                <h5 class="card-title">${hotel.hotelName}</h5>
+                                <p class="card-text">${hotel.hotelAddress}</p>
+                                <p class="card-text">Rating: ${hotel.hotelRating}</p>
+                                <p class="card-text">Amenities: ${hotel.hotelAmenities}</p>
+                                <p class="card-text">Price: $${hotel.roomPrice} per night</p>
+                                <a href="${pageContext.request.contextPath}/home/book.jsp"><button class="btn btn-primary">Book Now</button></a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </c:forEach>
 
-                <!-- Hotel 3 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Hotel 3 Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Hotel 3</h5>
-                            <p class="card-text">Description of Hotel 3.</p>
-                            <p class="card-text">Price: $150 per night</p>
-                            <a href="book.jsp"><button class="btn btn-primary">Book Now</button></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hotel 4 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Hotel 4 Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Hotel 4</h5>
-                            <p class="card-text">Description of Hotel 4.</p>
-                            <p class="card-text">Price: $130 per night</p>
-                            <a href="book.jsp"><button class="btn btn-primary">Book Now</button></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hotel 5 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Hotel 5 Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Hotel 5</h5>
-                            <p class="card-text">Description of Hotel 5.</p>
-                            <p class="card-text">Price: $110 per night</p>
-                            <a href="book.jsp"><button class="btn btn-primary">Book Now</button></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hotel 6 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Hotel 6 Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Hotel 6</h5>
-                            <p class="card-text">Description of Hotel 6.</p>
-                            <p class="card-text">Price: $140 per night</p>
-                            <a href="book.jsp"><button class="btn btn-primary">Book Now</button></a>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-        <!-- Hotel Listings End -->
+        </div>        <!-- Hotel Listings End -->
 
 
 
