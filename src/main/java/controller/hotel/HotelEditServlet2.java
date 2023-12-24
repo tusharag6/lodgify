@@ -17,7 +17,7 @@ public class HotelEditServlet2 extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out=response.getWriter();
 
-        String hid=request.getParameter("id");
+        String hid=request.getParameter("hotelId");
         int id=Integer.parseInt(hid);
         String name=request.getParameter("hotelName");
         String address=request.getParameter("hotelAddress");

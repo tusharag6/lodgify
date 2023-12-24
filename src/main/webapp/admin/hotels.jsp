@@ -52,10 +52,10 @@
                         <td>${hotel.roomPrice}</td>
                         <td>
                             <a href="HotelEditServlet?id=${hotel.hotelId}">
-                                <i class="fas fa-edit" title="Edit" style="margin-right: 10px"></i>
+                                <i class="fas fa-edit" title="Edit" style="margin-right: 10px; color: white"></i>
                             </a>
                             <a href="HotelDeleteServlet?id=${hotel.hotelId}">
-                                <i class="fas fa-trash-alt" title="Delete"></i>
+                                <i class="fas fa-trash-alt" title="Delete" style="color: white"></i>
                             </a>
                         </td>
                     </tr>
