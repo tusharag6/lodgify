@@ -35,6 +35,7 @@
                     <th>Check-In Date</th>
                     <th>Check-Out Date</th>
                     <th>Number of Guests</th>
+                    <th>Number of Rooms</th>
                     <th>Total Price</th>
                     <th>Confirmed</th>
                     <th>Action</th>
@@ -49,6 +50,7 @@
                         <td>${booking.checkInDate}</td>
                         <td>${booking.checkOutDate}</td>
                         <td>${booking.numberOfGuests}</td>
+                        <td>${booking.numberOfRooms}</td>
                         <td>${booking.totalPrice}</td>
                         <td>${booking.confirmed}</td>
                         <td>
