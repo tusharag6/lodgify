@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,9 +21,9 @@
         <div class="header">
             <h1>Booking Management</h1>
             <div class="crud-buttons">
-                <button>
+                <a href="${pageContext.request.contextPath}/admin/add-booking.jsp">
                     <i class="fa-regular fa-square-plus" style="margin-right: 5px; border-radius: 50px"></i> Add Booking
-                </button>
+                </a>
             </div>
         </div>
         <div class="table-card">
@@ -36,30 +37,30 @@
                     <th>Number of Guests</th>
                     <th>Total Price</th>
                     <th>Confirmed</th>
-                    <th>Action</th> <!-- New Action column -->
+                    <th>Action</th>
                     <!-- Add more columns as needed -->
                 </tr>
                 </thead>
                 <tbody>
-                <%-- Add booking items dynamically based on your data --%>
-                <tr class="booking-item">
-                    <td>1</td>
-                    <td>1</td>
-                    <td>2023-01-01</td>
-                    <td>2023-01-05</td>
-                    <td>2</td>
-                    <td>500.00</td>
-                    <td>true</td>
-                    <td>
-                        <a href="${pageContext.request.contextPath}/admin/edit-booking.jsp">
-                            <i class="fas fa-edit" title="Edit" style="margin-right: 10px; color: white"></i>
-                        </a>
-                        <a>
-                            <i class="fas fa-trash-alt" title="Delete" style="color: white"></i>
-                        </a>
-                    </td>
-                </tr>
-                <%-- Add more booking items as needed --%>
+                <c:forEach var="booking" items="${bookings}">
+                    <tr class="booking-item">
+                        <td>${booking.bookingId}</td>
+                        <td>${booking.hotelId}</td>
+                        <td>${booking.checkInDate}</td>
+                        <td>${booking.checkOutDate}</td>
+                        <td>${booking.numberOfGuests}</td>
+                        <td>${booking.totalPrice}</td>
+                        <td>${booking.confirmed}</td>
+                        <td>
+                            <a href="BookingEditServlet?id=${booking.bookingId}">
+                                <i class="fas fa-edit" title="Edit" style="margin-right: 10px; color: white"></i>
+                            </a>
+                            <a href="BookingDeleteServlet?id=${booking.bookingId}">
+                                <i class="fas fa-trash-alt" title="Delete" style="color: white"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </c:forEach>
                 </tbody>
             </table>
         </div>

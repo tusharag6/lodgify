@@ -21,7 +21,7 @@ public class BookingEditServlet2 extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        String bid = request.getParameter("id");
+        String bid = request.getParameter("bookingId");
         int id = Integer.parseInt(bid);
         int hotelId = Integer.parseInt(request.getParameter("hotelId"));
         String checkInDateString = request.getParameter("checkInDate");

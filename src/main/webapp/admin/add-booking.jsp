@@ -1,5 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <title>Edit Booking</title>
+    <title>Add Booking</title>
     <style>
         body {
             background: #14141f;
@@ -52,31 +51,28 @@
             border-radius: 5px;
             padding: 10px 30px;
             cursor: pointer;
-            margin: 20px 0 0 185px;
+            margin: 20px 0 0 135px;
         }
     </style>
 </head>
 <body>
 <div class="form-container">
-    <h1>Edit Booking</h1>
-    <form action="BookingEditServlet2" method="post">
-        <label for="bookingId">Booking ID</label>
-        <input type="text" id="bookingId" name="bookingId" value="${booking.bookingId}" readonly>
-
+    <h1>Add Booking</h1>
+    <form action="${pageContext.request.contextPath}/BookingCreationServlet" method="post">
         <label for="hotelId">Hotel ID</label>
-        <input type="text" id="hotelId" name="hotelId" value="${booking.hotelId}" readonly>
+        <input type="text" id="hotelId" name="hotelId" required>
 
         <label for="checkInDate">Check-In Date</label>
-        <input type="date" id="checkInDate" name="checkInDate" value="${booking.checkInDate}" required>
+        <input type="date" id="checkInDate" name="checkInDate" required>
 
         <label for="checkOutDate">Check-Out Date</label>
-        <input type="date" id="checkOutDate" name="checkOutDate" value="${booking.checkOutDate}" required>
+        <input type="date" id="checkOutDate" name="checkOutDate" required>
 
         <label for="numberOfGuests">Number of Guests</label>
-        <input type="number" id="numberOfGuests" name="numberOfGuests" value="${booking.numberOfGuests}" required>
+        <input type="number" id="numberOfGuests" name="numberOfGuests" required>
 
         <label for="totalPrice">Total Price</label>
-        <input type="number" id="totalPrice" name="totalPrice" value="${booking.totalPrice}" required>
+        <input type="number" id="totalPrice" name="totalPrice" required>
 
         <label for="isConfirmed">Confirmed</label>
         <select id="isConfirmed" name="isConfirmed" required>
@@ -84,7 +80,7 @@
             <option value="false">No</option>
         </select>
 
-        <button type="submit">Update Booking</button>
+        <button type="submit">Add Booking</button>
     </form>
 </div>
 </body>
