@@ -1,4 +1,17 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page import="pojo.Hotel" %>
+<%@ page import="dao.HotelDAO" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Arrays" %>
+<%
+    String hotelId = request.getParameter("hotelId");
+    Hotel hotel = HotelDAO.getSingleHotel(Integer.parseInt(hotelId));
+    String[] amenitiesArray = hotel.getHotelAmenities().split(",");
+    List<String> amenitiesList = Arrays.asList(hotel.getHotelAmenities().split(","));
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,31 +93,18 @@
                     <img src="https://via.placeholder.com/400" class="card-img-top" alt="Hotel Image">
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 pt-5">
                 <div class="p-3 pt-0">
-                    <h1 class="mb-4 text-primary">Hotel Name</h1>
-                    <h5 class="mb-4 text-primary">$3000</h5>
+                    <h1 class="mb-4 text-primary"><%= hotel.getHotelName() %></h1>
+                    <h5 class="mb-4 text-primary">₹<%= hotel.getRoomPrice() %></h5>
                     <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
                     <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
                     <div class="row gy-2 gx-4 mb-4">
+                        <% for (String amenity : amenitiesList) { %>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>First Class Flights</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i><%= amenity %></p>
                         </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Handpicked Hotels</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>5 Star Accommodations</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Latest Model Vehicles</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>150 Premium City Tours</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>24/7 Service</p>
-                        </div>
+                        <% } %>
                     </div>
                     <br>
                     <form class="card p-4">
