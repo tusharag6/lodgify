@@ -1,6 +1,8 @@
 package controller.booking;
 
 import dao.BookingDAO;
+import dao.HotelDAO;
+import jakarta.servlet.RequestDispatcher;
 import pojo.Booking;
 
 import jakarta.servlet.ServletException;
@@ -48,21 +50,12 @@ public class BookingCreationServlet extends HttpServlet {
         newBooking.setConfirmed(isConfirmed);
 
         // Add the booking to the database
-        boolean success = BookingDAO.addBooking(newBooking);
+        try {
+            BookingDAO.addBooking(newBooking);
+            response.sendRedirect(request.getContextPath() + "/BookingViewServlet");
 
-        if (success) {
-            // Send a response to the client
-            response.setContentType("text/html");
-            PrintWriter out = response.getWriter();
-            out.println("<html>" +
-                    "<body>" +
-                    "<h2>Booking Creation Successful</h2><br/>" +
-                    "<a href='BookingViewServlet'>View Bookings</a>" +
-                    "</body>" +
-                    "</html>");
-        } else {
-            // Handle error
-            response.getWriter().println("Failed to create a new booking.");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

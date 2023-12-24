@@ -1,5 +1,6 @@
 package controller.hotel;
 import dao.HotelDAO;
+import jakarta.servlet.RequestDispatcher;
 import pojo.Hotel;
 
 import jakarta.servlet.ServletException;
@@ -33,23 +34,12 @@ public class HotelRegistrationServlet extends HttpServlet {
         newHotel.setRoomPrice(roomPrice);
 
         // Add the hotel to the database
-        boolean success = HotelDAO.addHotel(newHotel);
-
-        if (success) {
-            // Send a response to the client
-            response.setContentType("text/html");
-            PrintWriter out = response.getWriter();
-            out.println("<html>" +
-                    "<body>" +
-                    "<h2>Registration Successful</h2><br/>" +
-                    "<a href='HotelViewServlet'>view Hotels</a>" +
-                    "</body>" +
-                    "</html>");
-        } else {
-            // Handle error
-            response.getWriter().println("Failed to create a new hotel.");
+        try {
+            HotelDAO.addHotel(newHotel);
+            RequestDispatcher rd = request.getRequestDispatcher("./admin/hotels.jsp?success=true");
+            rd.forward(request,response);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-
     }
 }

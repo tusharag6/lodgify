@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import dao.HotelDAO;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -15,21 +16,13 @@ import pojo.Hotel;
 public class HotelViewServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html");
-        PrintWriter out=response.getWriter();
-        out.println("<a href='index.jsp'>Add New Hotel</a>");
-        out.println("<h1>Hotels List</h1>");
-
-        List<Hotel> list= HotelDAO.getAllHotels();
-
-        out.print("<table border='1' width='100%'");
-        out.print("<tr><th>Name</th><th>Action</th></tr>");
-        for(Hotel e:list){
-            out.print("<tr><td>"+e.getHotelName()+"</td>" +
-                    "<td><a href='HotelEditServlet?id="+e.getHotelId()+"'>edit </a><a href='HotelDeleteServlet?id="+e.getHotelId()+"'>delete</a></td></tr>");
+        try {
+            List<Hotel> list = HotelDAO.getAllHotels();
+            request.setAttribute("hotels", list);
+            RequestDispatcher rd = request.getRequestDispatcher("./admin/hotels.jsp");
+            rd.forward(request,response);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        out.print("</table>");
-
-        out.close();
     }
 }
