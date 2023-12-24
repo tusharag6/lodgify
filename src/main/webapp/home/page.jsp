@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,14 +21,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="assets/css/bootsrap.min.css" rel="stylesheet">
-
-
-    <!-- Template Stylesheet -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Stylesheet -->
+    <style>
+        <%@ include file="assets/lib/animate/animate.min.css"%>
+        <%@ include file="assets/css/bootsrap.min.css"%>
+        <%@ include file="assets/css/style.css"%>
+    </style>
 </head>
 
 <body>
@@ -46,18 +45,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="index.jsp" class="nav-item nav-link">Home</a>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="${pageContext.request.contextPath}/home/index.jsp" class="nav-item nav-link">Home</a>
+                <a href="${pageContext.request.contextPath}/home/contact.jsp" class="nav-item nav-link">Contact</a>
             </div>
+            <a href="" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
         </div>
     </nav>
 
-    <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+    <div class="container-fluid bg-primary py-5 mb-5 hero-header" style="background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(${pageContext.request.contextPath}/home/assets/img/bg-hero.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover">
         <div class="container py-5">
             <div class="row justify-content-center py-5">
                 <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Complete Your Booking </h1>
-
+                    <h1 class="display-3 text-white animated slideInDown">Search Results</h1>
                 </div>
             </div>
         </div>
@@ -70,66 +69,99 @@
 <div class="container-xxl py-5 destination">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Happy Booking</h6>
+            <h6 class="section-title bg-white text-center text-primary px-3">Available Hotels</h6>
+            <h1 class="mb-5">Popular Results</h1>
         </div>
 
+
+        <!-- Hotel Listings Start -->
+        <div class="container py-5">
+            <div class="row">
+                <!-- Hotel 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Hotel 1 Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Hotel 1</h5>
+                            <p class="card-text">Description of Hotel 1.</p>
+                            <p class="card-text">Price: $100 per night</p>
+                            <a href="book.jsp"><button class="btn btn-primary">Book Now</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Hotel 2 Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Hotel 2</h5>
+                            <p class="card-text">Description of Hotel 2.</p>
+                            <p class="card-text">Price: $120 per night</p>
+                            <a href="book.jsp"><button class="btn btn-primary">Book Now</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Hotel 3 Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Hotel 3</h5>
+                            <p class="card-text">Description of Hotel 3.</p>
+                            <p class="card-text">Price: $150 per night</p>
+                            <a href="book.jsp"><button class="btn btn-primary">Book Now</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 4 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Hotel 4 Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Hotel 4</h5>
+                            <p class="card-text">Description of Hotel 4.</p>
+                            <p class="card-text">Price: $130 per night</p>
+                            <a href="book.jsp"><button class="btn btn-primary">Book Now</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 5 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Hotel 5 Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Hotel 5</h5>
+                            <p class="card-text">Description of Hotel 5.</p>
+                            <p class="card-text">Price: $110 per night</p>
+                            <a href="book.jsp"><button class="btn btn-primary">Book Now</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 6 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Hotel 6 Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Hotel 6</h5>
+                            <p class="card-text">Description of Hotel 6.</p>
+                            <p class="card-text">Price: $140 per night</p>
+                            <a href="book.jsp"><button class="btn btn-primary">Book Now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hotel Listings End -->
 
 
 
     </div>
 </div>
-        <!-- Hotel Information -->
-        <div class="row mt-5">
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/400" class="card-img-top" alt="Hotel Image">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card p-3">
-                    <h5 class="mb-4">Hotel Name</h5>
-                    <br>
-                    <h5 class="mb-4">Booking Information</h5>
-                    <form>
-                        <div class="mb-3">
-                            <label for="adults" class="form-label">Adults</label>
-                            <select class="form-select" id="adults">
-                                <option selected>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="children" class="form-label">Children</label>
-                            <select class="form-select" id="children">
-                                <option selected>0</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="checkIn" class="form-label">Check-in Date</label>
-                            <input type="date" class="form-control" id="checkIn">
-                        </div>
-                        <div class="mb-3">
-                            <label for="checkOut" class="form-label">Check-out Date</label>
-                            <input type="date" class="form-control" id="checkOut">
-                        </div>
-                        <p class="card-text">Price: $130 per night</p>
-                        <br>
-                        <br>
-                        <button type="submit" class="btn btn-primary">Confirm Booking</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- End Hotel Information -->
-    </div>
-</div>
-<!-- Destination Start -->
-
 <!-- Destination Start -->
 
 
@@ -161,22 +193,22 @@
                 <h4 class="text-white mb-3">Gallery</h4>
                 <div class="row g-2 pt-2">
                     <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="assets/img/package-1.jpg" alt="">
+                        <img class="img-fluid bg-light p-1" src="${pageContext.request.contextPath}/home/assets/img/package-1.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="assets/img/package-2.jpg" alt="">
+                        <img class="img-fluid bg-light p-1" src="${pageContext.request.contextPath}/home/assets/img/package-2.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="assets/img/package-3.jpg" alt="">
+                        <img class="img-fluid bg-light p-1" src="${pageContext.request.contextPath}/home/assets/img/package-3.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="assets/img/package-2.jpg" alt="">
+                        <img class="img-fluid bg-light p-1" src="${pageContext.request.contextPath}/home/assets/img/package-2.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="assets/img/package-3.jpg" alt="">
+                        <img class="img-fluid bg-light p-1" src="${pageContext.request.contextPath}/home/assets/img/package-3.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="assets/img/package-1.jpg" alt="">
+                        <img class="img-fluid bg-light p-1" src="${pageContext.request.contextPath}/home/assets/img/package-1.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -239,8 +271,8 @@
 <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="assets/JS/main.js"></script>
+<%--<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>--%>
+<script src="${pageContext.request.contextPath}/home/assets/JS/main.js"></script>
 </body>
 
 </html>

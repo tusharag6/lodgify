@@ -18,7 +18,7 @@ public class BookingViewServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<a href='index.html'>Add New Booking</a>");
+        out.println("<a href='index.jsp'>Add New Booking</a>");
         out.println("<h1>Bookings List</h1>");
 
         List<Booking> list = BookingDAO.getAllBookings();

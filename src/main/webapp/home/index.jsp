@@ -21,15 +21,12 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Libraries Stylesheet -->
-  <link href="assets/lib/animate/animate.min.css" rel="stylesheet">
-
-<%--  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">--%>
-  <!-- Customized Bootstrap Stylesheet -->
-  <link href="assets/css/bootsrap.min.css" rel="stylesheet">
-
-  <!-- Template Stylesheet -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <!-- Stylesheet -->
+  <style>
+    <%@ include file="assets/lib/animate/animate.min.css"%>
+    <%@ include file="assets/css/bootsrap.min.css"%>
+    <%@ include file="assets/css/style.css"%>
+  </style>
 </head>
 
 <body>
@@ -46,16 +43,16 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav ms-auto py-0">
         <a href="index.jsp" class="nav-item nav-link">Home</a>
-        <a href="about.html" class="nav-item nav-link">About</a>
-        <a href="booking.html" class="nav-item nav-link">Booking</a>
-        <a href="destination.html" class="nav-item nav-link">Destination</a>
-        <a href="contact.html" class="nav-item nav-link">Contact</a>
+        <a href="${pageContext.request.contextPath}/home/about.jsp" class="nav-item nav-link">About</a>
+        <a href="${pageContext.request.contextPath}/home/booking.jsp" class="nav-item nav-link">Booking</a>
+        <a href="${pageContext.request.contextPath}/home/destination.jsp" class="nav-item nav-link">Destination</a>
+        <a href="${pageContext.request.contextPath}/home/contact.jsp" class="nav-item nav-link">Contact</a>
       </div>
       <a href="" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
     </div>
   </nav>
 
-  <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+  <div class="container-fluid bg-primary py-5 mb-5 hero-header" style="background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(${pageContext.request.contextPath}/home/assets/img/bg-hero.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover">
     <div class="container py-5">
       <div class="row justify-content-center py-5">
         <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
@@ -63,7 +60,7 @@
           <p class="fs-4 text-white mb-4 animated slideInDown">Tempor erat elitr rebum at clita diam amet diam et eos erat ipsum lorem sit</p>
           <div class="position-relative w-75 mx-auto animated slideInDown">
             <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Eg: Thailand">
-            <a href="page.html"><button type="button" class="btn btn-primary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top: 7px;">Search</button></a>
+            <a href="${pageContext.request.contextPath}/home/page.jsp"><button type="button" class="btn btn-primary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top: 7px;">Search</button></a>
           </div>
         </div>
       </div>
@@ -79,7 +76,7 @@
     <div class="row g-5">
       <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
         <div class="position-relative h-100">
-          <img class="img-fluid position-absolute w-100 h-100" src="assets/img/about.jpg" alt="" style="object-fit: cover;">
+          <img class="img-fluid position-absolute w-100 h-100" src="${pageContext.request.contextPath}/home/assets/img/about.jpg" alt="" style="object-fit: cover;">
         </div>
       </div>
       <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -213,21 +210,21 @@
         <div class="row g-3">
           <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
             <a class="position-relative d-block overflow-hidden" href="">
-              <img class="img-fluid" src="assets/img/destination-1.jpg" alt="">
+              <img class="img-fluid" src="${pageContext.request.contextPath}/home/assets/img/destination-1.jpg" alt="">
               <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">30% OFF</div>
               <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Thailand</div>
             </a>
           </div>
           <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
             <a class="position-relative d-block overflow-hidden" href="">
-              <img class="img-fluid" src="assets/img/destination-2.jpg" alt="">
+              <img class="img-fluid" src="${pageContext.request.contextPath}/home/assets/img/destination-2.jpg" alt="">
               <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">25% OFF</div>
               <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Malaysia</div>
             </a>
           </div>
           <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
             <a class="position-relative d-block overflow-hidden" href="">
-              <img class="img-fluid" src="assets/img/destination-3.jpg" alt="">
+              <img class="img-fluid" src="${pageContext.request.contextPath}/home/assets/img/destination-3.jpg" alt="">
               <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">35% OFF</div>
               <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Australia</div>
             </a>
@@ -236,7 +233,7 @@
       </div>
       <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
         <a class="position-relative d-block h-100 overflow-hidden" href="">
-          <img class="img-fluid position-absolute w-100 h-100" src="assets/img/destination-4.jpg" alt="" style="object-fit: cover;">
+          <img class="img-fluid position-absolute w-100 h-100" src="${pageContext.request.contextPath}/home/assets/img/destination-4.jpg" alt="" style="object-fit: cover;">
           <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">20% OFF</div>
           <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">Indonesia</div>
         </a>
@@ -258,7 +255,7 @@
       <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
         <div class="package-item">
           <div class="overflow-hidden">
-            <img class="img-fluid" src="assets/img/package-1.jpg" alt="">
+            <img class="img-fluid" src="${pageContext.request.contextPath}/home/assets/img/package-1.jpg" alt="">
           </div>
           <div class="d-flex border-bottom">
             <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Thailand</small>
@@ -285,7 +282,7 @@
       <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
         <div class="package-item">
           <div class="overflow-hidden">
-            <img class="img-fluid" src="assets/img/package-2.jpg" alt="">
+            <img class="img-fluid" src="${pageContext.request.contextPath}/home/assets/img/package-2.jpg" alt="">
           </div>
           <div class="d-flex border-bottom">
             <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Indonesia</small>
@@ -312,7 +309,7 @@
       <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
         <div class="package-item">
           <div class="overflow-hidden">
-            <img class="img-fluid" src="assets/img/package-3.jpg" alt="">
+            <img class="img-fluid" src="${pageContext.request.contextPath}/home/assets/img/package-3.jpg" alt="">
           </div>
           <div class="d-flex border-bottom">
             <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Malaysia</small>
@@ -345,7 +342,7 @@
 <!-- Booking Start -->
 <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
   <div class="container">
-    <div class="booking p-5">
+    <div class="booking p-5" style="background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(${pageContext.request.contextPath}/home/assets/img/booking.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover">
       <div class="row g-5 align-items-center">
         <div class="col-md-6 text-white">
           <h6 class="text-white text-uppercase">Booking</h6>
@@ -463,7 +460,7 @@
       <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
         <div class="team-item">
           <div class="overflow-hidden">
-            <img class="img-fluid" src="assets/img/team-1.jpg" alt="">
+            <img class="img-fluid" src="${pageContext.request.contextPath}/home/assets/img/team-1.jpg" alt="">
           </div>
           <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
             <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -479,7 +476,7 @@
       <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
         <div class="team-item">
           <div class="overflow-hidden">
-            <img class="img-fluid" src="assets/img/team-2.jpg" alt="">
+            <img class="img-fluid" src="${pageContext.request.contextPath}/home/assets/img/team-2.jpg" alt="">
           </div>
           <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
             <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -495,7 +492,7 @@
       <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
         <div class="team-item">
           <div class="overflow-hidden">
-            <img class="img-fluid" src="assets/img/team-3.jpg" alt="">
+            <img class="img-fluid" src="${pageContext.request.contextPath}/home/assets/img/team-3.jpg" alt="">
           </div>
           <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
             <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -511,7 +508,7 @@
       <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
         <div class="team-item">
           <div class="overflow-hidden">
-            <img class="img-fluid" src="assets/img/team-4.jpg" alt="">
+            <img class="img-fluid" src="${pageContext.request.contextPath}/home/assets/img/team-4.jpg" alt="">
           </div>
           <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
             <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -543,7 +540,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="testimonial-item bg-white text-center border p-4">
-            <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="assets/img/testimonial-1.jpg" style="width: 80px; height: 80px;">
+            <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="${pageContext.request.contextPath}/home/assets/img/testimonial-1.jpg" style="width: 80px; height: 80px;">
             <h5 class="mb-0">John Doe</h5>
             <p>New York, USA</p>
             <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
@@ -551,7 +548,7 @@
         </div>
         <div class="carousel-item">
           <div class="testimonial-item bg-white text-center border p-4">
-            <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="assets/img/testimonial-2.jpg" style="width: 80px; height: 80px;">
+            <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="${pageContext.request.contextPath}/home/assets/img/testimonial-2.jpg" style="width: 80px; height: 80px;">
             <h5 class="mb-0">Jane Smith</h5>
             <p>Los Angeles, USA</p>
             <p class="mt-2 mb-0">Another testimonial content goes here.</p>
@@ -560,7 +557,7 @@
 
         <div class="carousel-item">
           <div class="testimonial-item bg-white text-center border p-4">
-            <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="assets/img/testimonial-3.jpg" style="width: 80px; height: 80px;">
+            <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="${pageContext.request.contextPath}/home/assets/img/testimonial-3.jpg" style="width: 80px; height: 80px;">
             <h5 class="mb-0">Alice Johnson</h5>
             <p>Chicago, USA</p>
             <p class="mt-2 mb-0">Yet another testimonial content goes here.</p>
@@ -570,7 +567,7 @@
         <!-- Add more carousel items as needed -->
         <div class="carousel-item">
           <div class="testimonial-item bg-white text-center border p-4">
-            <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="assets/img/testimonial-2.jpg" style="width: 80px; height: 80px;">
+            <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="${pageContext.request.contextPath}/home/assets/img/testimonial-2.jpg" style="width: 80px; height: 80px;">
             <h5 class="mb-0">John Doe</h5>
             <p>New York, USA</p>
             <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
@@ -621,22 +618,22 @@
         <h4 class="text-white mb-3">Gallery</h4>
         <div class="row g-2 pt-2">
           <div class="col-4">
-            <img class="img-fluid bg-light p-1" src="assets/img/package-1.jpg" alt="">
+            <img class="img-fluid bg-light p-1" src="${pageContext.request.contextPath}/home/assets/img/package-1.jpg" alt="">
           </div>
           <div class="col-4">
-            <img class="img-fluid bg-light p-1" src="assets/img/package-2.jpg" alt="">
+            <img class="img-fluid bg-light p-1" src="${pageContext.request.contextPath}/home/assets/img/package-2.jpg" alt="">
           </div>
           <div class="col-4">
-            <img class="img-fluid bg-light p-1" src="assets/img/package-3.jpg" alt="">
+            <img class="img-fluid bg-light p-1" src="${pageContext.request.contextPath}/home/assets/img/package-3.jpg" alt="">
           </div>
           <div class="col-4">
-            <img class="img-fluid bg-light p-1" src="assets/img/package-2.jpg" alt="">
+            <img class="img-fluid bg-light p-1" src="${pageContext.request.contextPath}/home/assets/img/package-2.jpg" alt="">
           </div>
           <div class="col-4">
-            <img class="img-fluid bg-light p-1" src="assets/img/package-3.jpg" alt="">
+            <img class="img-fluid bg-light p-1" src="${pageContext.request.contextPath}/home/assets/img/package-3.jpg" alt="">
           </div>
           <div class="col-4">
-            <img class="img-fluid bg-light p-1" src="assets/img/package-1.jpg" alt="">
+            <img class="img-fluid bg-light p-1" src="${pageContext.request.contextPath}/home/assets/img/package-1.jpg" alt="">
           </div>
         </div>
       </div>
@@ -700,7 +697,7 @@
 
 
 <!-- Template Javascript -->
-<script src="assets/JS/main.js"></script>
+<script src="${pageContext.request.contextPath}/home/assets/JS/main.js"></script>
 
 
 </body>

@@ -17,7 +17,7 @@ public class HotelViewServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out=response.getWriter();
-        out.println("<a href='index.html'>Add New Hotel</a>");
+        out.println("<a href='index.jsp'>Add New Hotel</a>");
         out.println("<h1>Hotels List</h1>");
 
         List<Hotel> list= HotelDAO.getAllHotels();

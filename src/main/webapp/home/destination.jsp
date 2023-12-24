@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,14 +20,12 @@
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="assets/css/bootsrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Stylesheet -->
+    <style>
+        <%@ include file="assets/lib/animate/animate.min.css"%>
+        <%@ include file="assets/css/bootsrap.min.css"%>
+        <%@ include file="assets/css/style.css"%>
+    </style>
 </head>
 
 <body>
@@ -46,16 +45,16 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
                 <a href="index.jsp" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="booking.html" class="nav-item nav-link">Booking</a>
-                <a href="destination.html" class="nav-item nav-link">Destination</a>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="${pageContext.request.contextPath}/home/about.jsp" class="nav-item nav-link">About</a>
+                <a href="${pageContext.request.contextPath}/home/booking.jsp" class="nav-item nav-link">Booking</a>
+                <a href="${pageContext.request.contextPath}/home/destination.jsp" class="nav-item nav-link">Destination</a>
+                <a href="${pageContext.request.contextPath}/home/contact.jsp" class="nav-item nav-link">Contact</a>
             </div>
             <a href="" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
         </div>
     </nav>
 
-    <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+    <div class="container-fluid bg-primary py-5 mb-5 hero-header" style="background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(${pageContext.request.contextPath}/home/assets/img/bg-hero.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover">
         <div class="container py-5">
             <div class="row justify-content-center py-5">
                 <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
@@ -148,22 +147,22 @@
                 <h4 class="text-white mb-3">Gallery</h4>
                 <div class="row g-2 pt-2">
                     <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="assets/img/package-1.jpg" alt="">
+                        <img class="img-fluid bg-light p-1" src="${pageContext.request.contextPath}/home/assets/img/package-1.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="assets/img/package-2.jpg" alt="">
+                        <img class="img-fluid bg-light p-1" src="${pageContext.request.contextPath}/home/assets/img/package-2.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="assets/img/package-3.jpg" alt="">
+                        <img class="img-fluid bg-light p-1" src="${pageContext.request.contextPath}/home/assets/img/package-3.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="assets/img/package-2.jpg" alt="">
+                        <img class="img-fluid bg-light p-1" src="${pageContext.request.contextPath}/home/assets/img/package-2.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="assets/img/package-3.jpg" alt="">
+                        <img class="img-fluid bg-light p-1" src="${pageContext.request.contextPath}/home/assets/img/package-3.jpg" alt="">
                     </div>
                     <div class="col-4">
-                        <img class="img-fluid bg-light p-1" src="assets/img/package-1.jpg" alt="">
+                        <img class="img-fluid bg-light p-1" src="${pageContext.request.contextPath}/home/assets/img/package-1.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -227,7 +226,7 @@
 
 
 
-<script src="assets/JS/main.js"></script>
+<script src="${pageContext.request.contextPath}/home/assets/JS/main.js"></script>
 </body>
 
 </html>
