@@ -11,16 +11,19 @@ public class HotelDAO {
     static Connection connection = ConnectionProvider.getConnection();
     // Create operation
     public static boolean addHotel(Hotel hotel) {
-        String query = "INSERT INTO hotels (hotelName, hotelAddress, hotelRating, hotelAmenities, roomPrice) " +
-                "VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO hotels (hotelName, hotelAddress, hotelDescription, hotelRoomPhotoUrl, hotelPhotoUrl, hotelRating, hotelAmenities, roomPrice) " +
+                "VALUES (?, ?, ?, ?, ?,?,?, ?)";
 
         try{
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, hotel.getHotelName());
             statement.setString(2, hotel.getHotelAddress());
-            statement.setDouble(3, hotel.getHotelRating());
-            statement.setString(4, hotel.getHotelAmenities());
-            statement.setInt(5, hotel.getRoomPrice());
+            statement.setString(3, hotel.getHotelDescription());
+            statement.setString(4, hotel.getHotelRoomPhotoUrl());
+            statement.setString(5, hotel.getHotelPhotoUrl());
+            statement.setDouble(6, hotel.getHotelRating());
+            statement.setString(7, hotel.getHotelAmenities());
+            statement.setInt(8, hotel.getRoomPrice());
 
             int rowsInserted = statement.executeUpdate();
             return rowsInserted > 0;
@@ -44,6 +47,9 @@ public class HotelDAO {
                 hotel.setHotelId(resultSet.getInt("hotelId"));
                 hotel.setHotelName(resultSet.getString("hotelName"));
                 hotel.setHotelAddress(resultSet.getString("hotelAddress"));
+                hotel.setHotelRoomPhotoUrl(resultSet.getString("hotelRoomPhotoUrl"));
+                hotel.setHotelPhotoUrl(resultSet.getString("hotelPhotoUrl"));
+                hotel.setHotelDescription(resultSet.getString("hotelDescription"));
                 hotel.setHotelRating(resultSet.getDouble("hotelRating"));
                 hotel.setHotelAmenities(resultSet.getString("hotelAmenities"));
                 hotel.setRoomPrice(resultSet.getInt("roomPrice"));
@@ -69,6 +75,9 @@ public class HotelDAO {
                     Hotel hotel = new Hotel();
                     hotel.setHotelName(resultSet.getString("hotelName"));
                     hotel.setHotelAddress(resultSet.getString("hotelAddress"));
+                    hotel.setHotelRoomPhotoUrl(resultSet.getString("hotelRoomPhotoUrl"));
+                    hotel.setHotelPhotoUrl(resultSet.getString("hotelPhotoUrl"));
+                    hotel.setHotelDescription(resultSet.getString("hotelDescription"));
                     hotel.setHotelRating(resultSet.getDouble("hotelRating"));
                     hotel.setHotelAmenities(resultSet.getString("hotelAmenities"));
                     hotel.setRoomPrice(resultSet.getInt("roomPrice"));
@@ -86,16 +95,19 @@ public class HotelDAO {
 
     // Update operation
     public static boolean updateHotel(Hotel hotel) {
-        String query = "UPDATE hotels SET hotelName=?, hotelAddress=?, hotelRating=?, hotelAmenities=?, roomPrice=? " +
+        String query = "UPDATE hotels SET hotelName=?, hotelAddress=?, hotelDescription=?, hotelRoomPhotoUrl=?, hotelPhotoUrl=?, hotelRating=?, hotelAmenities=?, roomPrice=? " +
                 "WHERE hotelId=?";
 
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, hotel.getHotelName());
             statement.setString(2, hotel.getHotelAddress());
-            statement.setDouble(3, hotel.getHotelRating());
-            statement.setString(4, hotel.getHotelAmenities());
-            statement.setInt(5, hotel.getRoomPrice());
-            statement.setInt(6, hotel.getHotelId());
+            statement.setString(3, hotel.getHotelDescription());
+            statement.setString(4, hotel.getHotelRoomPhotoUrl());
+            statement.setString(5, hotel.getHotelPhotoUrl());
+            statement.setDouble(6, hotel.getHotelRating());
+            statement.setString(7, hotel.getHotelAmenities());
+            statement.setInt(8, hotel.getRoomPrice());
+            statement.setInt(9, hotel.getHotelId());
 
             int rowsUpdated = statement.executeUpdate();
             return rowsUpdated > 0;
@@ -135,6 +147,9 @@ public static List<Hotel> findHotels(String searchTerm) {
                 hotel.setHotelId(resultSet.getInt("hotelId"));
                 hotel.setHotelName(resultSet.getString("hotelName"));
                 hotel.setHotelAddress(resultSet.getString("hotelAddress"));
+                hotel.setHotelRoomPhotoUrl(resultSet.getString("hotelRoomPhotoUrl"));
+                hotel.setHotelPhotoUrl(resultSet.getString("hotelPhotoUrl"));
+                hotel.setHotelDescription(resultSet.getString("hotelDescription"));
                 hotel.setHotelRating(resultSet.getDouble("hotelRating"));
                 hotel.setHotelAmenities(resultSet.getString("hotelAmenities"));
                 hotel.setRoomPrice(resultSet.getInt("roomPrice"));

@@ -1,4 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    if (!session.getAttribute("userName").toString().equals("codedawgs")) {
+        response.sendRedirect(request.getContextPath()+"/home/index.jsp");
+    }
+%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -61,6 +66,9 @@
     <form action="${pageContext.request.contextPath}/BookingCreationServlet" method="post">
         <label for="hotelId">Hotel ID</label>
         <input type="text" id="hotelId" name="hotelId" required>
+
+        <label for="userId">User ID</label>
+        <input type="text" id="userId" name="userId" required>
 
         <label for="checkInDate">Check-In Date</label>
         <input type="date" id="checkInDate" name="checkInDate" required>

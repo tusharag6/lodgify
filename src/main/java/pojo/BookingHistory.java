@@ -1,6 +1,8 @@
 package pojo;
+
 import java.util.Date;
-public class Booking {
+
+public class BookingHistory {
     private int bookingId;
     private int hotelId;
     private int userId;
@@ -10,24 +12,14 @@ public class Booking {
     private int numberOfRooms;
     private double totalPrice;
     private boolean isConfirmed;
+    private String hotelName;
+    private String hotelPhotoUrl;
 
-    // Constructors
+    // Constructors, getters, and setters
 
-    public Booking() {
+    public BookingHistory() {
         // Default constructor
     }
-
-    public Booking(int hotelId,int userId, Date checkInDate, Date checkOutDate, int numberOfGuests, int numberOfRooms) {
-        this.hotelId = hotelId;
-        this.userId = userId;
-        this.checkInDate = checkInDate;
-        this.checkOutDate = checkOutDate;
-        this.numberOfGuests = numberOfGuests;
-        this.numberOfRooms = numberOfRooms;
-        this.isConfirmed = false; // Default value
-    }
-
-    // Getter and Setter methods
 
     public int getBookingId() {
         return bookingId;
@@ -45,9 +37,13 @@ public class Booking {
         this.hotelId = hotelId;
     }
 
-    public int getUserId() { return userId; }
+    public int getUserId() {
+        return userId;
+    }
 
-    public void setUserId(int userId) { this.userId = userId; }
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
     public Date getCheckInDate() {
         return checkInDate;
@@ -97,4 +93,19 @@ public class Booking {
         isConfirmed = confirmed;
     }
 
+    public String getHotelName() {
+        return hotelName;
+    }
+
+    public void setHotelName(String hotelName) {
+        this.hotelName = hotelName;
+    }
+
+    public String getHotelPhotoUrl() {
+        return hotelPhotoUrl;
+    }
+
+    public void setHotelPhotoUrl(String hotelPhotoUrl) {
+        this.hotelPhotoUrl = hotelPhotoUrl;
+    }
 }

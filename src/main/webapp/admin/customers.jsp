@@ -1,3 +1,9 @@
+
+<%
+    if (!session.getAttribute("userName").toString().equals("codedawgs")) {
+        response.sendRedirect(request.getContextPath()+"/home/index.jsp");
+    }
+%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>

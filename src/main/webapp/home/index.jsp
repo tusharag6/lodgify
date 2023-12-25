@@ -1,4 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+  boolean isLoggedIn = (session != null && session.getAttribute("user") != null);
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +51,11 @@
         <a href="${pageContext.request.contextPath}/home/destination.jsp" class="nav-item nav-link">Destination</a>
         <a href="${pageContext.request.contextPath}/home/contact.jsp" class="nav-item nav-link">Contact</a>
       </div>
-      <a href="" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
+      <% if (!isLoggedIn) { %>
+      <a href="${pageContext.request.contextPath}/auth/Signup.jsp" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
+      <% } else { %>
+      <a href="${pageContext.request.contextPath}/BookingHistoryServlet" class="btn btn-primary rounded-pill py-2 px-4">Account</a>
+      <% } %>
     </div>
   </nav>
 

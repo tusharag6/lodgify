@@ -1,5 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%
+    if (!session.getAttribute("userName").toString().equals("codedawgs")) {
+        response.sendRedirect(request.getContextPath()+"/home/index.jsp");
+    }
+%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -65,6 +71,9 @@
 
         <label for="hotelId">Hotel ID</label>
         <input type="text" id="hotelId" name="hotelId" value="${booking.hotelId}" readonly>
+
+        <label for="userId">User ID</label>
+        <input type="text" id="userId" name="userId" value="${booking.userId}" readonly>
 
         <label for="checkInDate">Check-In Date</label>
         <input type="date" id="checkInDate" name="checkInDate" value="${booking.checkInDate}" required>

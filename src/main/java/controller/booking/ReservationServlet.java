@@ -3,6 +3,7 @@ package controller.booking;
 import dao.BookingDAO;
 import dao.HotelDAO;
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.http.HttpSession;
 import pojo.Booking;
 
 import jakarta.servlet.ServletException;
@@ -24,6 +25,7 @@ public class ReservationServlet extends HttpServlet {
             throws ServletException, IOException {
         // Retrieve data from the booking creation form
         int hotelId = Integer.parseInt(request.getParameter("hotelId"));
+        int userId = Integer.parseInt(request.getParameter("userId"));
         String checkInDateString = request.getParameter("checkInDate");
         String checkOutDateString = request.getParameter("checkOutDate");
         int numberOfGuests = Integer.parseInt(request.getParameter("numberOfGuests"));
@@ -51,6 +53,7 @@ public class ReservationServlet extends HttpServlet {
         // Create a new Booking object
         Booking newBooking = new Booking();
         newBooking.setHotelId(hotelId);
+        newBooking.setUserId(userId);
         newBooking.setCheckInDate(checkInDate);
         newBooking.setCheckOutDate(checkOutDate);
         newBooking.setNumberOfGuests(numberOfGuests);
@@ -60,13 +63,17 @@ public class ReservationServlet extends HttpServlet {
 
         // Add the booking to the database
         try {
-            BookingDAO.addBooking(newBooking);
-            Hotel hotel = HotelDAO.getSingleHotel(hotelId);
-
-            request.setAttribute("booking", newBooking);
-            request.setAttribute("hotel",hotel);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/home/confirmation.jsp");
-            dispatcher.forward(request, response);
+            HttpSession session = request.getSession();
+            if(session.getAttribute("userName")!=null){
+                BookingDAO.addBooking(newBooking);
+                Hotel hotel = HotelDAO.getSingleHotel(hotelId);
+                request.setAttribute("booking", newBooking);
+                request.setAttribute("hotel",hotel);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/home/confirmation.jsp");
+                dispatcher.forward(request, response);
+            }else {
+                response.sendRedirect(request.getContextPath()+"/auth/Signup.jsp");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

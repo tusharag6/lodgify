@@ -1,3 +1,4 @@
+        <%@ page import="pojo.User" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -47,13 +48,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="index.jsp" class="nav-item nav-link">Home</a>
-                <a href="contact.jsp" class="nav-item nav-link">Contact</a>
+                <a href="${pageContext.request.contextPath}/home/index.jsp" class="nav-item nav-link">Home</a>
+                <a href="${pageContext.request.contextPath}/home/contact.jsp" class="nav-item nav-link">Contact</a>
             </div>
         </div>
     </nav>
 
-    <div class="container-fluid bg-primary py-5 mb-5 hero-header" style="background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(${pageContext.request.contextPath}/home/assets/img/bg-hero.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover">
+    <div class="container-fluid bg-primary py-5 mb-5 hero-header" style="background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(${hotel.getHotelPhotoUrl()}); background-position: center center; background-repeat: no-repeat; background-size: cover">
         <div class="container py-5">
             <div class="row justify-content-center py-5">
                 <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
@@ -79,15 +80,14 @@
         <div class="row mt-5 px-5">
             <div class="col-md-6 mb-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/400" class="card-img-top" alt="Hotel Image">
+                    <img src="${hotel.getHotelRoomPhotoUrl()}" class="card-img-top" alt="Hotel Image">
                 </div>
             </div>
             <div class="col-md-6 pt-5">
                 <div class="p-3 pt-0">
                     <h1 class="mb-4 text-primary">${hotel.getHotelName()}</h1>
                     <h5 class="mb-4 text-primary">₹${hotel.getRoomPrice()}</h5>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <p class="mb-4">${hotel.getHotelDescription()}</p>
                     <div class="row gy-2 gx-4 mb-4">
                         <c:forEach var="amenity" items="${amenitiesList}">
                             <div class="col-sm-6">
@@ -121,6 +121,16 @@
                         <div>
 <%--                            <label for="hotelId">Hotel ID</label>--%>
                             <input type="hidden" id="hotelId" name="hotelId" value="${hotel.getHotelId()}">
+
+    <%
+        User user = (User) session.getAttribute("user");
+        int userId = 0;
+        if (user != null) {
+            userId = user.getUserId();
+        }
+    %>
+                            <input type="hidden" id="userId" name="userId" value="<%=userId%>">
+
 <%--                            <label for="totalPrice">Total Price</label>--%>
                             <input type="hidden" id="totalPrice" name="totalPrice" value="${hotel.getRoomPrice()}">
 <%--                            <label for="isConfirmed">Confirmed</label>--%>

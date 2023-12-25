@@ -1,5 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%
+    if (!session.getAttribute("userName").toString().equals("codedawgs")) {
+        response.sendRedirect(request.getContextPath()+"/home/index.jsp");
+    }
+%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -32,6 +38,7 @@
                 <tr>
                     <th>Booking ID</th>
                     <th>Hotel ID</th>
+                    <th>User ID</th>
                     <th>Check-In Date</th>
                     <th>Check-Out Date</th>
                     <th>Number of Guests</th>
@@ -47,6 +54,7 @@
                     <tr class="booking-item">
                         <td>${booking.bookingId}</td>
                         <td>${booking.hotelId}</td>
+                        <td>${booking.userId}</td>
                         <td>${booking.checkInDate}</td>
                         <td>${booking.checkOutDate}</td>
                         <td>${booking.numberOfGuests}</td>
