@@ -35,5 +35,22 @@ public class UserDao {
         ResultSet r = smt.executeQuery();
         return r.next();
     }
+
+    public User getUserByEmail(User user) throws SQLException {
+        final String query = "select * from user where userEmail = ?";
+        smt = connection.prepareStatement(query);
+        smt.setString(1, user.getUserEmail());
+        ResultSet resultSet = smt.executeQuery();
+
+        if (resultSet.next()) {
+            user.setUserId(resultSet.getInt("userId"));
+            user.setUserName(resultSet.getString("userName"));
+            user.setUserEmail(resultSet.getString("userEmail"));
+            return user;
+        } else {
+            return null;
+        }
+    }
+
 }
 

@@ -19,9 +19,10 @@ public class LoginController extends HttpServlet {
         user.setUserPassword(req.getParameter("password"));
         try{
             if(userDao.login(user)){
+                User userMod = userDao.getUserByEmail(user);
                 HttpSession s = req.getSession();
-                s.setAttribute("name",user.getUserName());
-                res.sendRedirect("./auth/index.jsp");
+                s.setAttribute("user",userMod);
+                res.sendRedirect(   "./auth/index.jsp");
             }
             else {
                 res.sendRedirect("./auth/Signin.jsp");
