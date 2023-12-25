@@ -87,29 +87,27 @@
             <h6 class="section-title bg-white text-center text-primary px-3 mb-5">Your Booking History</h6>
         </div>
         <div class="row g-4 justify-content-center">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="package-item">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="${pageContext.request.contextPath}/home/assets/img/package-1.jpg" alt="">
-                    </div>
-                    <div class="d-flex border-bottom">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Thailand</small>
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
-                        <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small>
-                    </div>
-                    <div class="text-center p-4">
-                        <h3 class="mb-0">$149.00</h3>
-                        <div class="mb-3">
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
-                            <small class="fa fa-star text-primary"></small>
+            <c:forEach var="order" items="${history}">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="${order.getHotelPhotoUrl()}" alt="">
                         </div>
-                        <p>Explore our curated packages, each designed to turn moments into memories. Unwind, indulge, and let us craft the perfect experience for you.</p>
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>${order.getNumberOfRooms()} Rooms</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>${order.getCheckInDate()}</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>${order.getNumberOfGuests()} Person</small>
+                        </div>
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">${order.getHotelName()}</h3>
+                            <div class="mb-3">
+                                <small class="text-primary">₹${order.getTotalPrice()}</small>
+                            </div>
+                            <p></p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </c:forEach>
         </div>
     </div>
 </div>

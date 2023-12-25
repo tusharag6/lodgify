@@ -54,7 +54,7 @@
       <% if (!isLoggedIn) { %>
       <a href="${pageContext.request.contextPath}/auth/Signup.jsp" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
       <% } else { %>
-      <a href="${pageContext.request.contextPath}/home/account.jsp" class="btn btn-primary rounded-pill py-2 px-4">Account</a>
+      <a href="${pageContext.request.contextPath}/BookingHistoryServlet" class="btn btn-primary rounded-pill py-2 px-4">Account</a>
       <% } %>
     </div>
   </nav>
