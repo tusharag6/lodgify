@@ -22,6 +22,7 @@ public class LoginController extends HttpServlet {
                 User userMod = userDao.getUserByEmail(user);
                 HttpSession s = req.getSession();
                 s.setAttribute("user",userMod);
+                s.setAttribute("userId",userMod.getUserId());
                 s.setAttribute("userName",userMod.getUserName());
                 if (isAdmin(user)) {
                     res.sendRedirect(req.getContextPath()+"/admin/home.jsp");

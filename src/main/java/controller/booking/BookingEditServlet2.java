@@ -24,6 +24,7 @@ public class BookingEditServlet2 extends HttpServlet {
         String bid = request.getParameter("bookingId");
         int id = Integer.parseInt(bid);
         int hotelId = Integer.parseInt(request.getParameter("hotelId"));
+        int userId = Integer.parseInt(request.getParameter("userId"));
         String checkInDateString = request.getParameter("checkInDate");
         String checkOutDateString = request.getParameter("checkOutDate");
         int numberOfGuests = Integer.parseInt(request.getParameter("numberOfGuests"));
@@ -45,6 +46,7 @@ public class BookingEditServlet2 extends HttpServlet {
         Booking booking = new Booking();
         booking.setBookingId(id);
         booking.setHotelId(hotelId);
+        booking.setUserId(userId);
         booking.setCheckInDate(checkInDate);
         booking.setCheckOutDate(checkOutDate);
         booking.setNumberOfGuests(numberOfGuests);

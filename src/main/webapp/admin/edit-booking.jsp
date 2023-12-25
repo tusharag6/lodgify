@@ -71,6 +71,9 @@
         <label for="hotelId">Hotel ID</label>
         <input type="text" id="hotelId" name="hotelId" value="${booking.hotelId}" readonly>
 
+        <label for="userId">User ID</label>
+        <input type="text" id="userId" name="userId" value="${booking.userId}" readonly>
+
         <label for="checkInDate">Check-In Date</label>
         <input type="date" id="checkInDate" name="checkInDate" value="${booking.checkInDate}" required>
 

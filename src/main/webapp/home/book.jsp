@@ -1,3 +1,4 @@
+        <%@ page import="pojo.User" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -121,6 +122,16 @@
                         <div>
 <%--                            <label for="hotelId">Hotel ID</label>--%>
                             <input type="hidden" id="hotelId" name="hotelId" value="${hotel.getHotelId()}">
+
+    <%
+        User user = (User) session.getAttribute("user");
+        int userId = 0;
+        if (user != null) {
+            userId = user.getUserId();
+        }
+    %>
+                            <input type="hidden" id="userId" name="userId" value="<%=userId%>">
+
 <%--                            <label for="totalPrice">Total Price</label>--%>
                             <input type="hidden" id="totalPrice" name="totalPrice" value="${hotel.getRoomPrice()}">
 <%--                            <label for="isConfirmed">Confirmed</label>--%>

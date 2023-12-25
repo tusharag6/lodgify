@@ -23,6 +23,7 @@ public class BookingCreationServlet extends HttpServlet {
 
         // Retrieve data from the booking creation form
         int hotelId = Integer.parseInt(request.getParameter("hotelId"));
+        int userId = Integer.parseInt(request.getParameter("userId"));
         String checkInDateString = request.getParameter("checkInDate");
         String checkOutDateString = request.getParameter("checkOutDate");
         int numberOfGuests = Integer.parseInt(request.getParameter("numberOfGuests"));
@@ -44,6 +45,7 @@ public class BookingCreationServlet extends HttpServlet {
         // Create a new Booking object
         Booking newBooking = new Booking();
         newBooking.setHotelId(hotelId);
+        newBooking.setUserId(userId);
         newBooking.setCheckInDate(checkInDate);
         newBooking.setCheckOutDate(checkOutDate);
         newBooking.setNumberOfGuests(numberOfGuests);

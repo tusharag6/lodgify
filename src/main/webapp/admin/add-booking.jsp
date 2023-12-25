@@ -67,6 +67,9 @@
         <label for="hotelId">Hotel ID</label>
         <input type="text" id="hotelId" name="hotelId" required>
 
+        <label for="userId">User ID</label>
+        <input type="text" id="userId" name="userId" required>
+
         <label for="checkInDate">Check-In Date</label>
         <input type="date" id="checkInDate" name="checkInDate" required>
 

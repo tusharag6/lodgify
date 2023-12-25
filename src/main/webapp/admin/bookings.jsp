@@ -37,6 +37,7 @@
                 <tr>
                     <th>Booking ID</th>
                     <th>Hotel ID</th>
+                    <th>User ID</th>
                     <th>Check-In Date</th>
                     <th>Check-Out Date</th>
                     <th>Number of Guests</th>
@@ -52,6 +53,7 @@
                     <tr class="booking-item">
                         <td>${booking.bookingId}</td>
                         <td>${booking.hotelId}</td>
+                        <td>${booking.userId}</td>
                         <td>${booking.checkInDate}</td>
                         <td>${booking.checkOutDate}</td>
                         <td>${booking.numberOfGuests}</td>
