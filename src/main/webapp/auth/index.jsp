@@ -11,6 +11,7 @@
       User user = (User) ses.getAttribute("user");
       out.print(user.getUserName());
     %>
+    <a href="${pageContext.request.contextPath}/logout"> Logout </a>
 </h1>
 <br/>
 </body>

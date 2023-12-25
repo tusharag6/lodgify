@@ -1,4 +1,4 @@
-package controller;
+package controller.auth;
 
 import dao.UserDao;
 import jakarta.servlet.RequestDispatcher;
