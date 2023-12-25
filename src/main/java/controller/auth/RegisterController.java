@@ -25,11 +25,11 @@ public class RegisterController extends HttpServlet {
         try {
             if(userDao.checkEmail(user)) {
                 userDao.register(user);
-                rd = req.getRequestDispatcher("./auth/Signin.jsp");
+                rd = req.getRequestDispatcher(req.getContextPath()+"/auth/Signin.jsp");
                 rd.forward(req,resp);
             }
             else {
-                rd = req.getRequestDispatcher("./auth/Signup.jsp");
+                rd = req.getRequestDispatcher(req.getContextPath()+"/auth/Signup.jsp");
                 rd.forward(req,resp);
             }
         } catch (SQLException e) {

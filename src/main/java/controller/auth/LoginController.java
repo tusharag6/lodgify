@@ -22,14 +22,15 @@ public class LoginController extends HttpServlet {
                 User userMod = userDao.getUserByEmail(user);
                 HttpSession s = req.getSession();
                 s.setAttribute("user",userMod);
+                s.setAttribute("userName",userMod.getUserName());
                 if (isAdmin(user)) {
-                    res.sendRedirect("./auth/admin.jsp");
+                    res.sendRedirect(req.getContextPath()+"/admin/home.jsp");
                 } else {
-                    res.sendRedirect("./auth/index.jsp");
+                    res.sendRedirect(req.getContextPath()+"/home/index.jsp");
                 }
             }
             else {
-                res.sendRedirect("./auth/Signin.jsp");
+                res.sendRedirect(req.getContextPath()+"/auth/Signin.jsp");
             }
         }
         catch (Exception e){

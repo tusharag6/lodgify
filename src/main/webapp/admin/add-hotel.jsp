@@ -1,3 +1,8 @@
+<%
+    if (session.getAttribute("userName") != "codedawgs") {
+        response.sendRedirect(request.getContextPath()+"/home/index.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>

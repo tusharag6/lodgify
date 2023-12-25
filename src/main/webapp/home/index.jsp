@@ -47,7 +47,7 @@
         <a href="${pageContext.request.contextPath}/home/destination.jsp" class="nav-item nav-link">Destination</a>
         <a href="${pageContext.request.contextPath}/home/contact.jsp" class="nav-item nav-link">Contact</a>
       </div>
-      <a href="" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
+      <a href="${pageContext.request.contextPath}/auth/Signup.jsp" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
     </div>
   </nav>
 

@@ -3,6 +3,7 @@ package controller.booking;
 import dao.BookingDAO;
 import dao.HotelDAO;
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.http.HttpSession;
 import pojo.Booking;
 
 import jakarta.servlet.ServletException;
@@ -60,13 +61,17 @@ public class ReservationServlet extends HttpServlet {
 
         // Add the booking to the database
         try {
-            BookingDAO.addBooking(newBooking);
-            Hotel hotel = HotelDAO.getSingleHotel(hotelId);
-
-            request.setAttribute("booking", newBooking);
-            request.setAttribute("hotel",hotel);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/home/confirmation.jsp");
-            dispatcher.forward(request, response);
+            HttpSession session = request.getSession();
+            if(session.getAttribute("userName")!=null){
+                BookingDAO.addBooking(newBooking);
+                Hotel hotel = HotelDAO.getSingleHotel(hotelId);
+                request.setAttribute("booking", newBooking);
+                request.setAttribute("hotel",hotel);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("/home/confirmation.jsp");
+                dispatcher.forward(request, response);
+            }else {
+                response.sendRedirect(request.getContextPath()+"/auth/Signup.jsp");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
