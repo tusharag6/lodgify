@@ -42,7 +42,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav ms-auto py-0">
-        <a href="index.jsp" class="nav-item nav-link">Home</a>
+        <a href="${pageContext.request.contextPath}/home/index.jsp" class="nav-item nav-link">Home</a>
         <a href="${pageContext.request.contextPath}/home/about.jsp" class="nav-item nav-link">About</a>
         <a href="${pageContext.request.contextPath}/home/destination.jsp" class="nav-item nav-link">Destination</a>
         <a href="${pageContext.request.contextPath}/home/contact.jsp" class="nav-item nav-link">Contact</a>
@@ -51,12 +51,12 @@
     </div>
   </nav>
 
-  <div class="container-fluid bg-primary py-5 mb-5 hero-header" style="background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(${pageContext.request.contextPath}/home/assets/img/bg-hero.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover">
+  <div class="container-fluid bg-primary py-5 mb-5 hero-header" style="background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(${pageContext.request.contextPath}/home/assets/img/bg-hero2.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover">
     <div class="container py-5">
       <div class="row justify-content-center py-5">
         <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
           <h1 class="display-3 text-white mb-3 animated slideInDown">Enjoy Your Vacation With Us</h1>
-          <p class="fs-4 text-white mb-4 animated slideInDown">Tempor erat elitr rebum at clita diam amet diam et eos erat ipsum lorem sit</p>
+          <p class="fs-4 text-white mb-4 animated slideInDown">Discover a world of bliss and excitement with us. Your dream vacation is just a click away – explore our website now for an unforgettable escape.</p>
           <div class="position-relative w-75 mx-auto animated slideInDown">
             <form action="${pageContext.request.contextPath}/SearchServlet" method="get">
               <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" name="searchTerm" placeholder="Eg: Thailand">
@@ -69,8 +69,6 @@
   </div>
 </div>
 <!-- Navbar & Hero End -->
-
-
 <!-- About Start -->
 <div class="container-xxl py-5">
   <div class="container">
@@ -83,11 +81,12 @@
       <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
         <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
         <h1 class="mb-4">Welcome to <span class="text-primary">Lodgify</span></h1>
-        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+        <p class="mb-4">
+          Welcome to Lodgify – Your Gateway to Unforgettable Stays! Explore a world of comfort and convenience as we redefine hospitality. Whether you're a traveler seeking the perfect getaway or a host looking to elevate your property, our website is your one-stop destination for exceptional experiences</p>
+        <p class="mb-4">Browse through our curated selection of accommodations, discover travel inspiration, and unlock the secrets to seamless hosting. Your journey to memorable stays begins here at Lodgify – where every click opens the door to a world of unparalleled hospitality. Start exploring now</p>
         <div class="row gy-2 gx-4 mb-4">
           <div class="col-sm-6">
-            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>First Class Flights</p>
+            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>First Class Stay</p>
           </div>
           <div class="col-sm-6">
             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Handpicked Hotels</p>
@@ -96,10 +95,10 @@
             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>5 Star Accommodations</p>
           </div>
           <div class="col-sm-6">
-            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Latest Model Vehicles</p>
+            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Best Customer Satisfaction</p>
           </div>
           <div class="col-sm-6">
-            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>150 Premium City Tours</p>
+            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>150 Premium Hotels</p>
           </div>
           <div class="col-sm-6">
             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>24/7 Service</p>
@@ -125,8 +124,8 @@
         <div class="service-item rounded pt-3">
           <div class="p-4">
             <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-            <h5>WorldWide Tours</h5>
-            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+            <h5>WorldWide Hotels</h5>
+            <p>Discover the world with our extensive collection of hotels, offering global comfort and luxury at your fingertips.</p>
           </div>
         </div>
       </div>
@@ -135,7 +134,7 @@
           <div class="p-4">
             <i class="fa fa-3x fa-hotel text-primary mb-4"></i>
             <h5>Hotel Reservation</h5>
-            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+            <p>Book your perfect stay ensuring a world of comfort awaits wherever your travels take you.</p>
           </div>
         </div>
       </div>
@@ -144,7 +143,7 @@
           <div class="p-4">
             <i class="fa fa-3x fa-user text-primary mb-4"></i>
             <h5>Travel Guides</h5>
-            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+            <p>Embark on unforgettable journeys your passport to discovering the world's hidden gems .</p>
           </div>
         </div>
       </div>
@@ -152,8 +151,8 @@
         <div class="service-item rounded pt-3">
           <div class="p-4">
             <i class="fa fa-3x fa-cog text-primary mb-4"></i>
-            <h5>Event Management</h5>
-            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+            <h5>24/7 Management</h5>
+            <p>Experience peace of mind with our 24/7 management services, ensuring seamless support .</p>
           </div>
         </div>
       </div>
@@ -167,8 +166,8 @@
 <div class="container-xxl py-5 destination">
   <div class="container">
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-      <h6 class="section-title bg-white text-center text-primary px-3">Destination</h6>
-      <h1 class="mb-5">Popular Destination</h1>
+      <h6 class="section-title bg-white text-center text-primary px-3">Hotels</h6>
+      <h1 class="mb-5">Popular Hotels</h1>
     </div>
     <div class="row g-3">
       <div class="col-lg-7 col-md-6">
@@ -236,7 +235,7 @@
               <small class="fa fa-star text-primary"></small>
               <small class="fa fa-star text-primary"></small>
             </div>
-            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
+            <p>Explore our curated packages, each designed to turn moments into memories. Unwind, indulge, and let us craft the perfect experience for you.</p>
             <div class="d-flex justify-content-center mb-2">
               <a href="#" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
               <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
@@ -263,7 +262,7 @@
               <small class="fa fa-star text-primary"></small>
               <small class="fa fa-star text-primary"></small>
             </div>
-            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
+            <p>Explore our curated packages, each designed to turn moments into memories. Unwind, indulge, and let us craft the perfect experience for you.</p>
             <div class="d-flex justify-content-center mb-2">
               <a href="#" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
               <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
@@ -290,7 +289,7 @@
               <small class="fa fa-star text-primary"></small>
               <small class="fa fa-star text-primary"></small>
             </div>
-            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
+            <p>Explore our curated packages, each designed to turn moments into memories. Unwind, indulge, and let us craft the perfect experience for you.</p>
             <div class="d-flex justify-content-center mb-2">
               <a href="#" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
               <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Book Now</a>
@@ -319,7 +318,7 @@
             <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="${pageContext.request.contextPath}/home/assets/img/testimonial-1.jpg" style="width: 80px; height: 80px;">
             <h5 class="mb-0">John Doe</h5>
             <p>New York, USA</p>
-            <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+            <p class="mb-0"> From the warm hospitality to the attention to detail, every moment exceeded our expectations. Thank you for making our trip truly memorable </p>
           </div>
         </div>
         <div class="carousel-item">
@@ -346,7 +345,7 @@
             <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="${pageContext.request.contextPath}/home/assets/img/testimonial-2.jpg" style="width: 80px; height: 80px;">
             <h5 class="mb-0">John Doe</h5>
             <p>New York, USA</p>
-            <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+            <p class="mt-2 mb-0"> From the warm hospitality to the attention to detail, every moment exceeded our expectations. Thank you for making our trip truly memorable</p>
           </div>
         </div>
       </div>
@@ -415,7 +414,7 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <h4 class="text-white mb-3">Newsletter</h4>
-        <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+        <p>Get exclusive travel insights, and destination highlights to your inbox.</p>
         <div class="position-relative mx-auto" style="max-width: 400px;">
           <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
           <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
@@ -427,10 +426,10 @@
     <div class="copyright">
       <div class="row">
         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-          &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+          &copy; <a class="border-bottom" href="#">Lodgify</a>, All Right Reserved.
 
           <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-          Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+          Designed By <a class="border-bottom" href="https://htmlcodex.com">CodeDawgs</a>
         </div>
         <div class="col-md-6 text-center text-md-end">
           <div class="footer-menu">
@@ -449,7 +448,7 @@
     <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
       <div class="d-inline-flex align-items-center" style="height: 45px;">
         <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Bhubaneswar</small>
-        <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+91 911123456</small>
+        <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+012 345 6789</small>
         <small class="text-light"><i class="fa fa-envelope-open me-2"></i>info@example.com</small>
       </div>
     </div>
