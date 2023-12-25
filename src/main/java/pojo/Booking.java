@@ -3,6 +3,7 @@ import java.util.Date;
 public class Booking {
     private int bookingId;
     private int hotelId;
+    private int userId;
     private Date checkInDate;
     private Date checkOutDate;
     private int numberOfGuests;
@@ -16,8 +17,9 @@ public class Booking {
         // Default constructor
     }
 
-    public Booking(int hotelId, Date checkInDate, Date checkOutDate, int numberOfGuests) {
+    public Booking(int hotelId,int userId, Date checkInDate, Date checkOutDate, int numberOfGuests, int numberOfRooms) {
         this.hotelId = hotelId;
+        this.userId = userId;
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
         this.numberOfGuests = numberOfGuests;
@@ -42,6 +44,10 @@ public class Booking {
     public void setHotelId(int hotelId) {
         this.hotelId = hotelId;
     }
+
+    public int getUserId() { return userId; }
+
+    public void setUserId(int userId) { this.userId = userId; }
 
     public Date getCheckInDate() {
         return checkInDate;

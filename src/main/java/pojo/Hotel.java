@@ -4,6 +4,9 @@ public class Hotel {
     private int hotelId;
     private String hotelName;
     private String hotelAddress;
+    private String hotelDescription;
+    private String hotelRoomPhotoUrl;
+    private String hotelPhotoUrl;
     private double hotelRating;
     private String hotelAmenities;
     private int roomPrice;
@@ -32,6 +35,30 @@ public class Hotel {
 
     public void setHotelAddress(String hotelAddress) {
         this.hotelAddress = hotelAddress;
+    }
+
+    public String getHotelDescription() {
+        return hotelDescription;
+    }
+
+    public void setHotelDescription(String hotelDescription) {
+        this.hotelDescription = hotelDescription;
+    }
+
+    public String getHotelRoomPhotoUrl() {
+        return hotelRoomPhotoUrl;
+    }
+
+    public void setHotelRoomPhotoUrl(String hotelRoomPhotoUrl) {
+        this.hotelRoomPhotoUrl = hotelRoomPhotoUrl;
+    }
+
+    public String getHotelPhotoUrl() {
+        return hotelPhotoUrl;
+    }
+
+    public void setHotelPhotoUrl(String hotelPhotoUrl) {
+        this.hotelPhotoUrl = hotelPhotoUrl;
     }
 
     public double getHotelRating() {

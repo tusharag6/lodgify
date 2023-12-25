@@ -47,13 +47,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="index.jsp" class="nav-item nav-link">Home</a>
-                <a href="contact.jsp" class="nav-item nav-link">Contact</a>
+                <a href="${pageContext.request.contextPath}/home/index.jsp" class="nav-item nav-link">Home</a>
+                <a href="${pageContext.request.contextPath}/home/contact.jsp" class="nav-item nav-link">Contact</a>
             </div>
         </div>
     </nav>
 
-    <div class="container-fluid bg-primary py-5 mb-5 hero-header" style="background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(${pageContext.request.contextPath}/home/assets/img/bg-hero.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover">
+    <div class="container-fluid bg-primary py-5 mb-5 hero-header" style="background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(${hotel.getHotelPhotoUrl()}); background-position: center center; background-repeat: no-repeat; background-size: cover">
         <div class="container py-5">
             <div class="row justify-content-center py-5">
                 <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
@@ -79,7 +79,7 @@
         <div class="row mt-5 px-5">
             <div class="col-md-6 mb-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/400" class="card-img-top" alt="Hotel Image">
+                    <img src="${hotel.getHotelRoomPhotoUrl()}" class="card-img-top" alt="Hotel Image">
                 </div>
             </div>
             <div class="col-md-6 pt-5">

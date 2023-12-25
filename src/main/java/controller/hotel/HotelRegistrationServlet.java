@@ -20,6 +20,9 @@ public class HotelRegistrationServlet extends HttpServlet {
         // Retrieve data from the registration form
         String hotelName = request.getParameter("hotelName");
         String hotelAddress = request.getParameter("hotelAddress");
+        String hotelDescription = request.getParameter("hotelDescription");
+        String hotelRoomPhotoUrl = request.getParameter("hotelRoomPhotoUrl");
+        String hotelPhotoUrl = request.getParameter("hotelPhotoUrl");
         double hotelRating = Double.parseDouble(request.getParameter("hotelRating"));
         String hotelAmenities = request.getParameter("hotelAmenities");
         int roomPrice = Integer.parseInt(request.getParameter("roomPrice"));
@@ -32,6 +35,9 @@ public class HotelRegistrationServlet extends HttpServlet {
         newHotel.setHotelRating(hotelRating);
         newHotel.setHotelAmenities(hotelAmenities);
         newHotel.setRoomPrice(roomPrice);
+        newHotel.setHotelDescription(hotelDescription);
+        newHotel.setHotelRoomPhotoUrl(hotelRoomPhotoUrl);
+        newHotel.setHotelPhotoUrl(hotelPhotoUrl);
 
         // Add the hotel to the database
         try {

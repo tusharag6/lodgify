@@ -39,6 +39,9 @@
                 <tr>
                     <th>Hotel ID</th>
                     <th>Hotel Name</th>
+                    <th>Hotel Description</th>
+                    <th>Hotel Photo</th>
+                    <th>Room Photo</th>
                     <th>Location</th>
                     <th>Rating</th>
                     <th>Amenities</th>
@@ -51,6 +54,9 @@
                     <tr class="hotel-item">
                         <td>${hotel.hotelId}</td>
                         <td>${hotel.hotelName}</td>
+                        <td>${hotel.hotelDescription}</td>
+                        <td>${hotel.hotelPhotoUrl}</td>
+                        <td>${hotel.hotelRoomPhotoUrl}</td>
                         <td>${hotel.hotelAddress}</td>
                         <td>${hotel.hotelRating}</td>
                         <td>${hotel.hotelAmenities}</td>

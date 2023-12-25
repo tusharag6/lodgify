@@ -64,6 +64,15 @@
         <label for="hotelName">Name</label>
         <input type="text" id="hotelName" name="hotelName" required><br>
 
+        <label for="hotelDescription">Hotel Description</label>
+        <input type="text" id="hotelDescription" name="hotelDescription" required><br>
+
+        <label for="hotelPhotoUrl">Hotel Photo</label>
+        <input type="text" id="hotelPhotoUrl" name="hotelPhotoUrl" required><br>
+
+        <label for="hotelRoomPhotoUrl">Room Photo</label>
+        <input type="text" id="hotelRoomPhotoUrl" name="hotelRoomPhotoUrl" required><br>
+
         <label for="hotelAddress">Address</label>
         <input type="text" id="hotelAddress" name="hotelAddress" required><br>
 

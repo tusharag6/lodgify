@@ -71,6 +71,15 @@
         <label for="hotelName">Hotel Name</label>
         <input type="text" id="hotelName" name="hotelName" value="${hotel.hotelName}" required>
 
+        <label for="hotelDescription">Hotel Description</label>
+        <input type="text" id="hotelDescription" name="hotelDescription" value="${hotel.hotelDescription}" required>
+
+        <label for="hotelPhotoUrl">Hotel Photo</label>
+        <input type="text" id="hotelPhotoUrl" name="hotelPhotoUrl" value="${hotel.hotelPhotourl}" required>
+
+        <label for="hotelRoomPhotoUrl">Room Photo</label>
+        <input type="text" id="hotelRoomPhotoUrl" name="hotelRoomPhotoUrl" value="${hotel.hotelRoomPhotoUrl}" required>
+
         <label for="hotelAddress">Hotel Address</label>
         <input type="text" id="hotelAddress" name="hotelAddress" value="${hotel.hotelAddress}" required>
 

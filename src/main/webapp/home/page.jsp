@@ -84,7 +84,7 @@
                 <c:forEach var="hotel" items="${hotels}">
                     <div class="col-md-4 mb-4">
                         <div class="card">
-                            <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="${hotel.hotelName} Image">
+                            <img src="${hotel.getHotelPhotoUrl()}" class="card-img-top" alt="${hotel.hotelName} Image">
                             <div class="card-body">
                                 <h5 class="card-title">${hotel.hotelName}</h5>
                                 <p class="card-text">${hotel.hotelAddress}</p>
