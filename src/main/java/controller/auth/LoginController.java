@@ -24,7 +24,6 @@ public class LoginController extends HttpServlet {
                 s.setAttribute("user",userMod);
                 s.setAttribute("userId",userMod.getUserId());
                 s.setAttribute("userName",userMod.getUserName());
-                System.out.println("User Name: "+userMod.getUserName());
                 if (isAdmin(user)) {
                     res.sendRedirect(req.getContextPath()+"/admin/home.jsp");
                 } else {

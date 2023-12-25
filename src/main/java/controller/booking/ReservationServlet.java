@@ -45,7 +45,7 @@ public class ReservationServlet extends HttpServlet {
         }
 
         // Calculate the number of days
-        long numberOfDays = calculateNumberOfDays(checkInDate, checkOutDate);
+        long numberOfDays = calculateNumberOfDays(checkInDate, checkOutDate)+1;
 
         // Calculate the total price
         double totalPrice = roomPrice * numberOfRooms * numberOfDays;
@@ -67,10 +67,11 @@ public class ReservationServlet extends HttpServlet {
             if(session.getAttribute("userName")!=null){
                 BookingDAO.addBooking(newBooking);
                 Hotel hotel = HotelDAO.getSingleHotel(hotelId);
+                session.setAttribute("booking", newBooking);
+                session.setAttribute("hotel",hotel);
                 request.setAttribute("booking", newBooking);
                 request.setAttribute("hotel",hotel);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/home/confirmation.jsp");
-                dispatcher.forward(request, response);
+                response.sendRedirect(request.getContextPath()+"/home/confirmation.jsp");
             }else {
                 response.sendRedirect(request.getContextPath()+"/auth/Signup.jsp");
             }
