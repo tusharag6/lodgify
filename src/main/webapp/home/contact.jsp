@@ -29,13 +29,7 @@
 </head>
 
 <body>
-<!-- Spinner Start -->
-<!--<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">-->
-<!--  <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">-->
-<!--    <span class="sr-only">Loading...</span>-->
-<!--  </div>-->
-<!--</div>-->
-<!-- Spinner End -->
+
 <!-- Navbar & Hero Start -->
 <div class="container-fluid position-relative p-0">
   <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
@@ -57,7 +51,7 @@
     </div>
   </nav>
 
-  <div class="container-fluid bg-primary py-5 mb-5 hero-header" style="background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(${pageContext.request.contextPath}/home/assets/img/bg-hero.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover">
+  <div class="container-fluid bg-primary py-5 mb-5 hero-header" style="background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(${pageContext.request.contextPath}/home/assets/img/bg-hero4.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover">
     <div class="container py-5">
       <div class="row justify-content-center py-5">
         <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
@@ -86,7 +80,7 @@
     <div class="row g-4">
       <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
         <h5>Get In Touch</h5>
-        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos</p>
+        <p class="mb-4">Using the details mentioned below.</p>
         <div class="d-flex align-items-center mb-4">
           <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
             <i class="fa fa-map-marker-alt text-white"></i>
@@ -209,7 +203,7 @@
       </div>
       <div class="col-lg-3 col-md-6">
         <h4 class="text-white mb-3">Newsletter</h4>
-        <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+        <p>Get exclusive travel insights, and destination highlights to your inbox.</p>
         <div class="position-relative mx-auto" style="max-width: 400px;">
           <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
           <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
@@ -221,10 +215,10 @@
     <div class="copyright">
       <div class="row">
         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-          &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+          &copy; <a class="border-bottom" href="#">Lodgify</a>, All Right Reserved.
 
           <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-          Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+          Designed By <a class="border-bottom" href="https://htmlcodex.com">CodeDawgs</a>
         </div>
         <div class="col-md-6 text-center text-md-end">
           <div class="footer-menu">
@@ -243,7 +237,7 @@
     <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
       <div class="d-inline-flex align-items-center" style="height: 45px;">
         <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Bhubaneswar</small>
-        <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+91 9934361811</small>
+        <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+012 345 6789</small>
         <small class="text-light"><i class="fa fa-envelope-open me-2"></i>info@example.com</small>
       </div>
     </div>
