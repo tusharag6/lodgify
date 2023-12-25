@@ -87,8 +87,7 @@
                 <div class="p-3 pt-0">
                     <h1 class="mb-4 text-primary">${hotel.getHotelName()}</h1>
                     <h5 class="mb-4 text-primary">₹${hotel.getRoomPrice()}</h5>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <p class="mb-4">${hotel.getHotelDescription()}</p>
                     <div class="row gy-2 gx-4 mb-4">
                         <c:forEach var="amenity" items="${amenitiesList}">
                             <div class="col-sm-6">

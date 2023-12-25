@@ -1,5 +1,6 @@
+
 <%
-    if (session.getAttribute("userName") != "codedawgs") {
+    if (!session.getAttribute("userName").toString().equals("codedawgs")) {
         response.sendRedirect(request.getContextPath()+"/home/index.jsp");
     }
 %>
