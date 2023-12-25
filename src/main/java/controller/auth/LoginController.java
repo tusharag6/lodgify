@@ -22,7 +22,11 @@ public class LoginController extends HttpServlet {
                 User userMod = userDao.getUserByEmail(user);
                 HttpSession s = req.getSession();
                 s.setAttribute("user",userMod);
-                res.sendRedirect(   "./auth/index.jsp");
+                if (isAdmin(user)) {
+                    res.sendRedirect("./auth/admin.jsp");
+                } else {
+                    res.sendRedirect("./auth/index.jsp");
+                }
             }
             else {
                 res.sendRedirect("./auth/Signin.jsp");
@@ -31,5 +35,8 @@ public class LoginController extends HttpServlet {
         catch (Exception e){
             e.printStackTrace();
         }
+    }
+    private boolean isAdmin(User user) {
+        return "codedawgs@gmail.com".equals(user.getUserEmail()) && "codedawgs".equals(user.getUserPassword());
     }
 }
