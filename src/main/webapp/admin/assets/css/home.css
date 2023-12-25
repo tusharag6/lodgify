@@ -1,0 +1,144 @@
+body{
+    background: #14141f;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+}
+.metrics-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+
+}
+
+.metric-content {
+    display: flex;
+    align-items: center;
+}
+
+.metric-icon {
+    max-width: 50px; /* Adjust the max-width based on your preference */
+    margin-right: 20px; /* Add some spacing between the icon and text */
+}
+
+.metric-text {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-text-number{
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem
+
+}
+
+.metric-text-title {
+    font-size: 1rem;
+    color: #ccdfa0;
+}
+
+.metric-card {
+    background: #292934;
+    /*border: 1px solid #e0e0e0;*/
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.metric-card:hover {
+    transform: scale(1.05);
+}
+.recent-hotels-register,
+.recent-booking{
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.recent-hotels-main-header,
+.recent-booking-main-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0px 10px 10px;
+    margin-bottom: 20px;
+}
+
+.recent-bookings-container,
+.recent-hotels-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.booking-item,
+.hotel-item {
+    background: #292934 ;
+    /*border: 1px solid #e0e0e0;*/
+    /*padding: 20px;*/
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+
+}
+
+.booking-item:hover,
+.hotel-item:hover {
+    transform: scale(1.05);
+}
+
+.booking-image{
+    width: 143px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.recent-bookings-header{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem
+}
+
+.booking-customer{
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+}
+
+.recent-bookings-subheader{
+    font-size: 1rem;
+    color: #ccdfa0;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 2rem;
+}
+
+.booking-date{
+    font-size: 1rem;
+    padding: 0.7rem 2rem 1rem 0;
+}
+
+.booking-date div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.3rem;
+}
+
+.booking-date-icon{
+    max-width: 30px; /* Adjust the max-width based on your preference */
+    margin-right: 8px;/* Add some spacing between the icon and text */
+}
+
+.hotel-details{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    font-size: 1.2rem;
+    padding-right: 20px;
+}
